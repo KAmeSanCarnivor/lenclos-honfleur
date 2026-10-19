@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <!-- veines horizontales (haut et bas) -->
+    <filter id="vh" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.6" numOctaves="4" seed="7"/>
+      <feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0 0.02  4 0 0 0 -1.7"/>
+    </filter>
+    <!-- veines verticales (gauche et droite) -->
+    <filter id="vv" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6 0.008" numOctaves="4" seed="21"/>
+      <feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0 0.02  4 0 0 0 -1.7"/>
+    </filter>
+    <clipPath id="top"><polygon points="0,0 90,0 60,30 30,30"/></clipPath>
+    <clipPath id="bottom"><polygon points="30,60 60,60 90,90 0,90"/></clipPath>
+    <clipPath id="left"><polygon points="0,0 30,30 30,60 0,90"/></clipPath>
+    <clipPath id="right"><polygon points="90,0 90,90 60,60 60,30"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#top)">
+    <rect width="90" height="90" fill="#7a5a3c"/>
+    <rect width="90" height="90" filter="url(#vh)"/>
+  </g>
+  <g clip-path="url(#bottom)">
+    <rect width="90" height="90" fill="#684b31"/>
+    <rect width="90" height="90" filter="url(#vh)"/>
+  </g>
+  <g clip-path="url(#left)">
+    <rect width="90" height="90" fill="#72533a"/>
+    <rect width="90" height="90" filter="url(#vv)"/>
+  </g>
+  <g clip-path="url(#right)">
+    <rect width="90" height="90" fill="#6d4f35"/>
+    <rect width="90" height="90" filter="url(#vv)"/>
+  </g>
+
+  <!-- joints d'angle et arêtes usées -->
+  <g stroke="#2a1a0e" stroke-opacity="0.65" stroke-width="0.8" fill="none">
+    <line x1="0" y1="0" x2="30" y2="30"/>
+    <line x1="90" y1="0" x2="60" y2="30"/>
+    <line x1="0" y1="90" x2="30" y2="60"/>
+    <line x1="90" y1="90" x2="60" y2="60"/>
+  </g>
+  <g stroke="#2a1a0e" stroke-opacity="0.5" stroke-width="1.2" fill="none">
+    <line x1="30" y1="30" x2="60" y2="30"/>
+    <line x1="30" y1="30" x2="30" y2="60"/>
+  </g>
+  <g stroke="#c9a577" stroke-opacity="0.25" stroke-width="0.8" fill="none">
+    <line x1="30" y1="60" x2="60" y2="60"/>
+    <line x1="60" y1="30" x2="60" y2="60"/>
+  </g>
+</svg>
