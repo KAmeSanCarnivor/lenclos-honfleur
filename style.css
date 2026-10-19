@@ -1,0 +1,1352 @@
+/* ==========================================
+    0. POLICES (hébergées sur le site, aucun appel à Google)
+    ========================================== */
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/cormorantgaramond-500-italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/cormorantgaramond-500.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/cormorantgaramond-500.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('fonts/poppins-300.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/poppins-400.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/poppins-600.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/poppins-700.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ==========================================
+    1. RESET ET VARIABLES
+    ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --taupe: #7a6f69;       /* fond du logo */
+    --taupe-dark: #5d534e;
+    --sage: #587770;        /* vert des assiettes */
+    --sage-dark: #46635c;
+    --wine: #7a3036;        /* lie-de-vin, pour les formules */
+    --cream: #f7f3ec;
+    --paper: #fbf9f5;
+    --ink: #2e2926;
+    --muted: #756c66;
+    --line: rgba(122, 111, 105, 0.28);
+    --font-title: 'Cormorant Garamond', Georgia, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+    2. HEADER
+    ========================================== */
+.site-header {
+    background: var(--taupe);
+    color: #fff;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 1;
+}
+
+.logo-name {
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.logo-sub {
+    margin-top: 5px;
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.logo-x {
+    margin: 0 3px;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.badge-horaire {
+    background: rgba(255, 255, 255, 0.16);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.badge-horaire .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #7be0a0;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.badge-horaire .dot.closed {
+    background-color: #f0a3a3;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-link {
+    display: inline-flex;
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link svg {
+    width: 26px;
+    height: 26px;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.btn-appel {
+    background: #fff;
+    color: var(--taupe-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.btn-appel:hover {
+    background: var(--cream);
+}
+
+@media (max-width: 640px) {
+    .badge-horaire {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-name {
+        font-size: 1.35rem;
+        letter-spacing: 2px;
+    }
+    .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+    .header-info {
+        gap: 8px;
+    }
+    .social-link svg {
+        width: 22px;
+        height: 22px;
+    }
+    .btn-appel {
+        padding: 7px 12px;
+        font-size: 0.82rem;
+    }
+}
+
+/* ==========================================
+    3. HERO SECTION
+    ========================================== */
+.hero {
+    padding: 40px 20px;
+    background: var(--paper);
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 5;
+}
+
+.hero-image-wrap {
+    position: relative;
+    max-width: 1000px;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    background: var(--taupe);
+}
+
+/* Le cadrage écarte les bords de la photo (flèches de capture) et les clients à droite */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: -4%;
+    width: 128%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 62%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(46, 41, 38, 0.35), rgba(46, 41, 38, 0.55));
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-kicker {
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-content h2 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.hero-text {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #fff;
+    color: var(--taupe-dark);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--sage);
+    color: #fff;
+}
+
+/* ==========================================
+    4. ABOUT & INTÉRIEUR
+    ========================================== */
+.about {
+    padding: 60px 0;
+    position: relative;
+    z-index: 5;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2,
+.gallery-preview h2,
+.info-section h2 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--taupe-dark);
+    font-size: 2.6rem;
+    line-height: 1.15;
+}
+
+.about-text h2 {
+    margin-bottom: 16px;
+}
+
+.about-text p {
+    color: var(--muted);
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(46, 41, 38, 0.15);
+}
+
+.etage-notice {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.etage-notice h3 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--sage);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.etage-notice p strong {
+    color: var(--taupe-dark);
+}
+
+/* ==========================================
+    5. CARTE
+    ========================================== */
+.carte-section {
+    background-color: var(--cream);
+    padding: 80px 20px;
+    color: var(--ink);
+}
+
+.carte-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carte-header {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.carte-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carte-header h2 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: var(--taupe-dark);
+    line-height: 1.1;
+}
+
+.sous-titre {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.lang-flag {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(122, 111, 105, 0.25);
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-flag:hover {
+    transform: scale(1.08);
+}
+
+.lang-flag.active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18), 0 0 0 3px var(--sage);
+    transform: scale(1.08);
+}
+
+.lang-flag-nl {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23fff'/%3E%3Crect width='40' height='13.3' fill='%23AE1C28'/%3E%3Crect y='26.7' width='40' height='13.3' fill='%2321468B'/%3E%3C/svg%3E");
+}
+
+.lang-flag-en {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23012169'/%3E%3Cpath d='M0,0 L40,40 M40,0 L0,40' stroke='%23fff' stroke-width='9'/%3E%3Cpath d='M0,0 L40,40 M40,0 L0,40' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M20,0 L20,40 M0,20 L40,20' stroke='%23fff' stroke-width='14'/%3E%3Cpath d='M20,0 L20,40 M0,20 L40,20' stroke='%23C8102E' stroke-width='8'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 480px) {
+    .carte-header h2 {
+        font-size: 2.4rem;
+    }
+    .carte-header-top {
+        gap: 12px;
+    }
+    .lang-flag {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ---------- Onglets ---------- */
+.carte-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.carte-tab {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    background: transparent;
+    border: 1.5px solid var(--taupe);
+    border-radius: 30px;
+    padding: 9px 26px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.carte-tab:hover {
+    background: rgba(122, 111, 105, 0.12);
+}
+
+.carte-tab.active {
+    background: var(--taupe);
+    color: #fff;
+}
+
+/* ---------- Suggestion du chef ---------- */
+/* Ardoise du chef : clin d'œil à l'ardoise accrochée dans la salle */
+.suggestion-card {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 30px 28px 28px;
+    color: #ece6da;
+    /* ardoise mate et poussiéreuse, cadre en vieux chêne (voir images/) */
+    background: #2d2a27 url('images/ardoise.svg') center / cover no-repeat;
+    border: 26px solid #6d4f35;
+    border-image: url('images/cadre-bois.svg') 30 / 26px stretch;
+    border-radius: 0;
+    transform: rotate(-0.5deg);
+    box-shadow:
+        inset 0 3px 16px rgba(0, 0, 0, 0.7),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 10px 14px rgba(46, 41, 38, 0.35));
+}
+
+.suggestion-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    color: #d9d2c4;
+    opacity: 0.85;
+}
+
+.suggestion-label::before,
+.suggestion-label::after {
+    content: "";
+    width: 30px;
+    height: 0;
+    border-top: 1.5px dashed rgba(236, 230, 218, 0.45);
+}
+
+.suggestion-dish {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin: 14px 0 12px;
+    color: #f3eee4;
+    text-shadow: 0 0 1.5px rgba(255, 255, 255, 0.55), 0 0 6px rgba(255, 255, 255, 0.12);
+}
+
+.suggestion-price {
+    display: inline-block;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #f3eee4;
+    text-shadow: 0 0 1.5px rgba(255, 255, 255, 0.55);
+    padding-top: 12px;
+    border-top: 1.5px dashed rgba(236, 230, 218, 0.4);
+    min-width: 90px;
+}
+
+/* ---------- Formules : bandeau façon carte de bistrot ---------- */
+.formules {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 0 64px;
+}
+
+/* chaque formule = une petite carte, comme les rubriques de la carte */
+.formule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 24px 8px 22px;
+    text-align: center;
+    background: #fffdf8 url('images/papier.svg');
+    border: 1px solid var(--line);
+    outline: 1px solid rgba(122, 111, 105, 0.25);
+    outline-offset: -6px;
+    box-shadow: 0 8px 18px rgba(46, 41, 38, 0.08);
+}
+
+.formule-name {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.formule-price {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: var(--wine);
+}
+
+/* cartes pleines : plat en vert, formules intermédiaires en taupe, formule complète en lie-de-vin (clin d'œil au bar à vin) */
+.formule {
+    outline-color: rgba(247, 243, 236, 0.4);
+}
+
+.formule:nth-child(1) {
+    background: var(--sage);
+    border-color: var(--sage);
+}
+
+.formule:nth-child(2),
+.formule:nth-child(3) {
+    background: var(--taupe-dark);
+    border-color: var(--taupe-dark);
+}
+
+.formule-big {
+    background: var(--wine);
+    border-color: var(--wine);
+}
+
+.formule .formule-name {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.formule .formule-price {
+    color: #fff;
+}
+
+.formule-big .formule-price {
+    color: #fff;
+}
+
+/* ---------- Cartes (une par rubrique) ---------- */
+.menu-grid {
+    columns: 2 340px;
+    column-gap: 44px;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .menu-grid {
+        columns: 1;
+    }
+}
+
+.menu-category,
+.vins-group {
+    position: relative;
+    break-inside: avoid;
+    margin: 0 0 48px;
+    padding: 44px 28px 16px;
+    background: #fffdf8 url('images/papier.svg');
+    border: 1px solid var(--line);
+    outline: 1px solid rgba(122, 111, 105, 0.25);
+    outline-offset: -8px;
+    box-shadow: 0 8px 18px rgba(46, 41, 38, 0.08);
+}
+
+.menu-category-full {
+    column-span: all;
+}
+
+/* étiquette de rubrique, comme sur la carte papier */
+.menu-category h3,
+.vins-group h3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0;
+    padding: 10px 22px;
+    background: var(--taupe-dark);
+    color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    box-shadow: 0 3px 8px rgba(46, 41, 38, 0.25);
+}
+
+.menu-category h3::after {
+    display: none;
+}
+
+.cat-price {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    margin: -10px -22px -10px 16px;
+    padding: 0 16px;
+    background: var(--sage);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cat-note {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-style: italic;
+    margin: -2px 0 6px;
+}
+
+/* ---------- Lignes de plats ---------- */
+.menu-list {
+    list-style: none;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px dotted var(--line);
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+/* plats sans prix individuel : centrés, séparés par un petit losange */
+.menu-list-plain li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    border-bottom: none;
+}
+
+.menu-list-plain li + li {
+    margin-top: 14px;
+}
+
+.menu-list-plain li + li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin: 0 auto 13px;
+    background: var(--sage);
+    opacity: 0.6;
+    transform: rotate(45deg);
+}
+
+.menu-list-plain {
+    padding: 4px 0 10px;
+}
+
+.dish-name {
+    flex-grow: 1;
+    color: var(--ink);
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.28rem;
+    line-height: 1.25;
+    letter-spacing: 0.2px;
+}
+
+.menu-list-plain .dish-name {
+    flex-grow: 0;
+}
+
+.dish-name small {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.dish-name em {
+    font-weight: 500;
+    color: var(--sage-dark);
+}
+
+.dish-price {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--sage-dark);
+    white-space: nowrap;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ---------- Rubrique « Bar à vin » (renvoie vers l'onglet Vins) ---------- */
+.wine-teaser {
+    max-width: 760px;
+    margin: 24px auto 0;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.wine-teaser-text {
+    max-width: 520px;
+    margin: 4px auto 22px;
+    font-family: var(--font-title);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.wine-kinds {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 44px;
+    margin-bottom: 26px;
+}
+
+.wine-kinds li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.wine-kinds strong {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.45rem;
+    line-height: 1.1;
+    color: var(--ink);
+}
+
+.wine-kinds small {
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.wine-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(46, 41, 38, 0.25);
+}
+
+.wine-dot-blanc { background: #e8d98a; }
+.wine-dot-rose { background: #e6a29b; }
+.wine-dot-rouge { background: var(--wine); }
+
+.btn-wine {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--wine);
+    border: none;
+    padding: 13px 30px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-wine:hover {
+    background: #5f2227;
+}
+/* ---------- Vins ---------- */
+.vins-head {
+    position: sticky;
+    top: 62px;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: 1fr 70px 70px 70px;
+    gap: 6px;
+    padding: 12px 28px 10px;
+    margin-bottom: 40px;
+    background: var(--cream);
+    border-bottom: 1.5px solid var(--taupe);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--taupe-dark);
+    text-align: right;
+}
+
+.vins-list {
+    list-style: none;
+}
+
+.vins-list li {
+    display: grid;
+    grid-template-columns: 1fr 70px 70px 70px;
+    gap: 6px;
+    align-items: baseline;
+    padding: 11px 0;
+    border-bottom: 1px dotted var(--line);
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--sage-dark);
+    text-align: right;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.vins-list li:last-child {
+    border-bottom: none;
+}
+
+.vin-name {
+    text-align: left;
+    font-size: 1.28rem;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: 0.2px;
+}
+
+.vin-name small {
+    display: block;
+    margin-top: 2px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.vins-note {
+    margin-top: 6px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    .formules {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .formules {
+        gap: 12px;
+    }
+
+    .formule {
+        padding: 20px 6px 18px;
+    }
+
+    .formule-price {
+        font-size: 2.2rem;
+    }
+
+    .formule:nth-child(3),
+    .formule-big {
+        grid-column: 1 / -1;
+    }
+
+    .menu-category,
+    .vins-group {
+        padding: 42px 18px 14px;
+    }
+
+    .menu-category h3,
+    .vins-group h3 {
+        padding: 9px 16px;
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
+    }
+
+    .cat-price {
+        margin: -9px -16px -9px 12px;
+        padding: 0 12px;
+    }
+
+    .vins-head,
+    .vins-list li {
+        grid-template-columns: 1fr 44px 44px 44px;
+        gap: 2px;
+    }
+
+    .vins-head {
+        padding: 10px 18px 8px;
+        font-size: 0.62rem;
+    }
+
+    .vins-list li {
+        font-size: 1.05rem;
+    }
+}
+
+/* ==========================================
+    6. GALERIE
+    ========================================== */
+.gallery-preview {
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.gallery-preview h2 {
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 26px;
+}
+
+.gallery-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(46, 41, 38, 0.08);
+    border: 1px solid var(--line);
+}
+
+.gallery-card img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.gallery-card p {
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--taupe-dark);
+}
+
+/* ==========================================
+    7. INFOS PRATIQUES & RÉSERVATION
+    ========================================== */
+.info-section {
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.info-section h2 {
+    margin-bottom: 40px;
+}
+
+.info-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.info-block {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 22px;
+}
+
+.info-block h3 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: var(--taupe-dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.info-block p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.info-note {
+    margin-top: 8px;
+    font-size: 0.85rem;
+}
+
+.info-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.link-tel-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: #fff;
+    padding: 10px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.link-tel-btn:hover {
+    background: var(--sage-dark);
+    transform: translateY(-2px);
+}
+
+.link-route-btn {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--sage-dark);
+    border: 2px solid var(--sage);
+    padding: 8px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.link-route-btn:hover {
+    background: var(--sage);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.info-actions .link-route-btn {
+    margin-top: 0;
+}
+
+.info-block .info-contact-details {
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.info-contact-details a {
+    color: var(--taupe-dark);
+    text-decoration: none;
+}
+
+.info-contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+    8. FOOTER
+    ========================================== */
+.site-footer {
+    background: var(--taupe);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 5;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+/* ==========================================
+    9. RESPONSIVE MOBILE
+    ========================================== */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .hero-content h2 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 24px 16px;
+    }
+
+    .hero-image-wrap {
+        aspect-ratio: auto;
+        background: #fff;
+    }
+
+    .hero-img {
+        position: static;
+        display: block;
+        width: 128%;
+        height: 260px;
+        margin-left: -4%;
+        object-fit: cover;
+        object-position: 50% 70%;
+    }
+
+    .hero-overlay {
+        display: none;
+    }
+
+    .hero-content {
+        position: static;
+        background: #fff;
+        color: var(--ink);
+        padding: 24px 18px 28px;
+    }
+
+    .hero-kicker {
+        color: var(--sage);
+    }
+
+    .hero-content h2 {
+        color: var(--taupe-dark);
+        font-size: 2.2rem;
+    }
+
+    .hero-text {
+        color: var(--muted);
+    }
+
+    .btn-primary {
+        background: var(--sage);
+        color: #fff;
+    }
+
+    .carte-section {
+        padding: 60px 16px;
+    }
+
+    .formules {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .formule-big {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==========================================
+    PAGE MENTIONS LÉGALES
+    ========================================== */
+.legal-page {
+    padding: 50px 0 70px;
+    max-width: 800px;
+}
+
+.legal-page h2 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--taupe-dark);
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.legal-block {
+    margin-bottom: 30px;
+}
+
+.legal-block h3 {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--sage-dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.legal-block p,
+.legal-block li {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.legal-block p + p {
+    margin-top: 10px;
+}
+
+.legal-block ul {
+    margin-top: 8px;
+    padding-left: 22px;
+}
+
+.legal-block a {
+    color: var(--sage-dark);
+}
+
+@media (min-width: 701px) {
+    .menu-category.col-break {
+        break-before: column;
+    }
+}
+
+
+/* ---------- Les extras : même carte que les autres rubriques, contour en pointillés ---------- */
+.menu-category.extras-tag {
+    border: 1.5px dashed rgba(122, 111, 105, 0.6);
+    outline: none;
+}
+
+.extras-tag .menu-list li {
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: none;
+    padding: 6px 0;
+}
+
+.extras-tag .dish-name {
+    flex-grow: 0;
+}
+
+.extras-tag .leader {
+    flex: 1;
+    border-bottom: 1.5px dotted rgba(122, 111, 105, 0.55);
+    transform: translateY(-4px);
+}

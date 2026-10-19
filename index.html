@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Enclos - Bistrot & bar à vin à Honfleur</title>
+    <meta name="description" content="L'Enclos, bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux, terrasse et salle. Ouvert du mardi au dimanche, de 10h à 21h.">
+
+    <!-- Icônes -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Aperçu lors du partage (WhatsApp, Facebook...) : ajouter og:url et l'adresse complète de og:image quand le nom de domaine sera choisi -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="L'Enclos">
+    <meta property="og:title" content="L'Enclos - Bistrot & bar à vin à Honfleur">
+    <meta property="og:description" content="Bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux, terrasse et salle.">
+    <meta property="og:image" content="apercu-partage.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="L'Enclos, bistrot et bar à vin à Honfleur">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "L'Enclos",
+        "description": "Bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux.",
+        "servesCuisine": ["Française", "Normande"],
+        "telephone": "+33621372037",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "21 rue de la Ville",
+            "postalCode": "14600",
+            "addressLocality": "Honfleur",
+            "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "21:00"
+        }],
+        "sameAs": ["https://www.instagram.com/lenclos.honfleur"]
+    }
+    </script>
+    <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+    <!-- HEADER / BANDEAU HAUT -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="L'Enclos, bistrot et bar à vin">
+                <span class="logo-name">L'Enclos</span>
+                <span class="logo-sub"><span data-en="Bistro" data-nl="Bistro">Bistrot</span> <span class="logo-x">&times;</span> <span data-en="Wine bar" data-nl="Wijnbar">Bar à vin</span></span>
+            </a>
+            <div class="header-info">
+                <div class="badge-horaire">
+                    <span class="dot" id="horaire-dot"></span> <span id="horaire-du-jour">...</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/lenclos.honfleur" class="social-link" aria-label="Instagram de L'Enclos" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                </div>
+                <a href="tel:0621372037" class="btn-appel"><span aria-hidden="true">&#9742;</span> <span data-en="Call" data-nl="Bel">Appeler</span></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION HERO (ACCUEIL) -->
+    <section class="hero">
+        <div class="hero-image-wrap">
+            <img src="images/terrasse.webp" alt="La terrasse de L'Enclos à Honfleur" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-kicker" data-en="Honfleur" data-nl="Honfleur">Honfleur</p>
+                <h2 data-en="A warm bistro &amp; wine bar" data-nl="Een gezellige bistro &amp; wijnbar">Un bistrot convivial &amp; bar à vin</h2>
+                <p class="hero-text" data-en="Homemade cooking, local produce, on the terrace or in the dining room." data-nl="Huisgemaakte keuken, lokale producten, op het terras of in de zaal.">Cuisine maison, produits locaux, en terrasse ou en salle.</p>
+                <a href="#contact" class="btn-primary" data-en="Book a table" data-nl="Reserveren">Réserver</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉSENTATION & INTÉRIEUR -->
+    <section class="about container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 data-en="Welcome to L'Enclos" data-nl="Welkom bij L'Enclos">Bienvenue à L'Enclos</h2>
+                <p data-en="A family bistro run by a father and his son, on rue de la Ville in the heart of old Honfleur, in the former Enclos district that gave it its name. Here, you push open the door as if visiting friends: cobbled lanes, old-world fa&ccedil;ades and, a few steps away, the Vieux Bassin. At the table, homemade bistro cooking made with local produce, and a wine bar to make the moment last, without rushing." data-nl="Een familiebistro, gerund door een vader en zijn zoon, in de Rue de la Ville, in het hart van het oude Honfleur, in de voormalige wijk L'Enclos waaraan het zijn naam dankt. Hier duwt u de deur open alsof u bij vrienden op bezoek gaat: straatjes met kasseien, gevels van weleer en, op een steenworp afstand, het Vieux Bassin. Aan tafel: huisgemaakte bistrokeuken met lokale producten en een wijnbar om het moment te rekken, zonder haast.">Un bistrot familial tenu par un père et son fils, rue de la Ville, au cœur du vieux Honfleur, dans l'ancien quartier de l'Enclos dont il tient son nom. Ici, on pousse la porte comme chez des amis : ruelles pavées, façades d'autrefois et, à quelques pas, le Vieux Bassin. À table, une cuisine de bistrot faite maison avec des produits locaux, et un bar à vin pour prolonger le moment, sans se presser.</p>
+
+                <div class="etage-notice">
+                    <h3 data-en="Book your table" data-nl="Reserveer uw tafel">Réservez votre table</h3>
+                    <p data-en="Terrace or dining room, just give us a call. <strong>The dining room can be privatised</strong> for your groups and occasions." data-nl="Terras of zaal, bel ons gerust. <strong>De zaal kan worden afgehuurd</strong> voor uw groepen en gelegenheden.">En terrasse ou en salle, appelez-nous simplement. <strong>La salle est privatisable</strong> pour vos groupes et vos occasions.</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/salle.webp" alt="La salle intérieure de L'Enclos">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CARTE -->
+    <section id="carte" class="carte-section">
+        <div class="carte-container">
+            <div class="carte-header">
+                <div class="carte-header-top">
+                    <button id="lang-toggle-nl" class="lang-flag lang-flag-nl" type="button" aria-pressed="false" aria-label="Bekijk de kaart in het Nederlands" title="Bekijk in het Nederlands"></button>
+                    <h2 data-en="Our Menu" data-nl="Onze Kaart">Notre Carte</h2>
+                    <button id="lang-toggle-en" class="lang-flag lang-flag-en" type="button" aria-pressed="false" aria-label="Voir la carte en anglais" title="View in English"></button>
+                </div>
+                <p class="sous-titre" data-en="Homemade, with local produce. All our meats are of French origin." data-nl="Huisgemaakt, met lokale producten. Al ons vlees is van Franse oorsprong.">Tout est fait maison, avec des produits locaux. Toutes nos viandes sont d'origine française.</p>
+            </div>
+
+            <!-- ONGLETS -->
+            <div class="carte-tabs" role="tablist">
+                <button class="carte-tab active" type="button" role="tab" aria-selected="true" data-tab="panel-carte" data-en="Food" data-nl="Eten">La carte</button>
+                <button class="carte-tab" type="button" role="tab" aria-selected="false" data-tab="panel-boissons" data-en="Drinks" data-nl="Dranken">Boissons</button>
+                <button class="carte-tab" type="button" role="tab" aria-selected="false" data-tab="panel-vins" data-en="Wines" data-nl="Wijnen">Vins</button>
+            </div>
+
+            <!-- ===================== PANNEAU : LA CARTE ===================== -->
+            <div class="carte-panel" id="panel-carte" role="tabpanel">
+
+                <!-- SUGGESTION DU CHEF : à modifier ici (texte et prix) -->
+                <div class="suggestion-card">
+                    <p class="suggestion-label" data-en="Chef's suggestion" data-nl="Suggestie van de chef">Suggestion du chef</p>
+                    <p class="suggestion-dish" data-en="Pan-seared scallops, risotto" data-nl="Gebakken sint-jakobsschelpen, risotto">Poêlée de Saint-Jacques, risotto</p>
+                    <p class="suggestion-price">23 €</p>
+                </div>
+
+                <!-- FORMULES -->
+                <div class="formules">
+                    <div class="formule"><span class="formule-name" data-en="Main course" data-nl="Hoofdgerecht">Plat</span><span class="formule-price">15 €</span></div>
+                    <div class="formule"><span class="formule-name" data-en="Starter + main" data-nl="Voorgerecht + hoofdgerecht">Entrée + plat</span><span class="formule-price">23 €</span></div>
+                    <div class="formule"><span class="formule-name" data-en="Main + dessert" data-nl="Hoofdgerecht + dessert">Plat + dessert</span><span class="formule-price">22 €</span></div>
+                    <div class="formule formule-big"><span class="formule-name" data-en="Starter + main + dessert" data-nl="Voor + hoofd + dessert">Entrée + plat + dessert</span><span class="formule-price">30 €</span></div>
+                </div>
+
+                <div class="menu-grid">
+
+                    <!-- ENTRÉES -->
+                    <div class="menu-category">
+                        <h3 data-en="Starters" data-nl="Voorgerechten">Entrées</h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Small salad of your choice" data-nl="Klein slaatje naar keuze">Petite salade au choix</span></li>
+                            <li><span class="dish-name" data-en="Seafood of your choice <small>(in season)</small>" data-nl="Zeevruchten naar keuze <small>(in het seizoen)</small>">Fruits de mer au choix <small>(en saison)</small></span></li>
+                            <li><span class="dish-name" data-en="Pink shrimp" data-nl="Roze garnalen">Crevettes roses</span></li>
+                            <li><span class="dish-name" data-en="Smoked salmon" data-nl="Gerookte zalm">Saumon fumé</span></li>
+                            <li><span class="dish-name" data-en="Avocado tartare <small>with pink shrimp</small>" data-nl="Avocadotartaar <small>met roze garnalen</small>">Tartare d'avocat <small>aux crevettes roses</small></span></li>
+                            <li><span class="dish-name" data-en="Fish terrine and smoked salmon <small>with samphire</small>" data-nl="Visterrine en gerookte zalm <small>met zeekraal</small>">Terrine de poisson et saumon fumé <small>et salicornes</small></span></li>
+                            <li><span class="dish-name" data-en="Pork and camembert terrine <small>with onion confit and Pommeau</small>" data-nl="Varkens- en camembertterrine <small>met uiconfit en Pommeau</small>">Terrine de porc au camembert <small>et son confit d'oignon au Pommeau</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- PLATS -->
+                    <div class="menu-category">
+                        <h3 data-en="Main courses" data-nl="Hoofdgerechten">Plats</h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Mussels marinière, fries <small>&euro;1 extra: with cream, camembert, turmeric or poulette</small>" data-nl="Mosselen marinière, friet <small>toeslag &euro;1: met room, camembert, kurkuma of poulette</small>">Moules marinières, frites <small>suppl. 1 € : à la crème, au camembert, au curcuma ou poulette</small></span></li>
+                            <li><span class="dish-name" data-en="Pollock fillet <small>leek fondue, steamed potato</small>" data-nl="Koolvisfilet <small>preifondue, gestoomde aardappel</small>">Dos de lieu noir <small>fondue de poireaux, pomme vapeur</small></span></li>
+                            <li><span class="dish-name" data-en="Beef tartare <small>hand-cut, fries and condiments</small>" data-nl="Rundertartaar <small>met mes gesneden, friet en bijgerechten</small>">Tartare de bœuf <small>au couteau, frites et ses condiments</small></span></li>
+                            <li><span class="dish-name" data-en="Burger and fries <small>artisan bun, lettuce, tomato, fried onions, beef patty, cheddar, burger sauce. Add bacon +&euro;1</small>" data-nl="Burger met friet <small>ambachtelijk brood, sla, tomaat, gebakken uien, rundvlees, cheddar, burgersaus. Bacon erbij +&euro;1</small>">Burger frites <small>pain artisanal, salade, tomate, oignons frits, steak haché, cheddar, sauce burger. Supp. bacon +1 €</small></span></li>
+                            <li><span class="dish-name" data-en="Steak &laquo;&nbsp;&agrave; cheval&nbsp;&raquo; <small>tartar sauce, fries</small>" data-nl="Steak &laquo;&nbsp;&agrave; cheval&nbsp;&raquo; <small>tartaarsaus, friet</small>">Steak à cheval <small>sauce tartare, frites</small></span></li>
+                            <li><span class="dish-name" data-en="Rump steak <small>pepper or camembert sauce, fries</small>" data-nl="Rumpsteak <small>peper- of camembertsaus, friet</small>">Cœur de rumsteak <small>sauce poivre ou camembert, frites</small></span></li>
+                            <li><span class="dish-name" data-en="Free-range chicken breast <small>Vallée d'Auge sauce, crushed potatoes</small>" data-nl="Kippenborst van gele kip <small>Vallée d'Auge-saus, aardappelpuree</small>">Suprême de poulet jaune <small>sauce Vallée d'Auge, écrasé de pomme de terre</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- DESSERTS -->
+                    <div class="menu-category">
+                        <h3 data-en="Desserts" data-nl="Desserts">Desserts</h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Norman cheeses" data-nl="Normandische kazen">Fromages normands</span></li>
+                            <li><span class="dish-name" data-en="Floating island" data-nl="Île flottante">Île flottante</span></li>
+                            <li><span class="dish-name" data-en="Chocolate mousse" data-nl="Chocolademousse">Mousse au chocolat</span></li>
+                            <li><span class="dish-name" data-en="Strawberry panna cotta" data-nl="Panna cotta met aardbei">Panna cotta fraise</span></li>
+                            <li><span class="dish-name" data-en="Crème brûlée" data-nl="Crème brûlée">Crème brûlée</span></li>
+                            <li><span class="dish-name" data-en="Norman tart" data-nl="Normandische taart">Tarte normande</span></li>
+                            <li><span class="dish-name" data-en="Gourmet coffee <small>+&euro;2: strawberry panna cotta, crème brûlée, chocolate mousse</small>" data-nl="Café gourmand <small>+&euro;2: panna cotta met aardbei, crème brûlée, chocolademousse</small>">Café gourmand <small>+2 € : panna cotta fraise, crème brûlée, mousse au chocolat</small></span></li>
+                            <li><span class="dish-name" data-en="Ice cream, 2 scoops <small>vanilla, strawberry, chocolate, coffee, salted butter caramel, lemon, apple, raspberry. Whipped cream +&euro;1</small>" data-nl="IJs, 2 bollen <small>vanille, aardbei, chocolade, koffie, karamel met gezouten boter, citroen, appel, framboos. Slagroom +&euro;1</small>">Glace 2 boules <small>vanille, fraise, chocolat, café, caramel beurre salé, citron, pomme, framboise. Crème fouettée +1 €</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- LES EXTRAS (suppléments) -->
+                    <div class="menu-category extras-tag">
+                        <h3 data-en="Extras" data-nl="Extra's">Les extras</h3>
+                        <p class="cat-note" data-en="To go with your dish" data-nl="Bij uw gerecht">Pour accompagner votre plat</p>
+                        <ul class="menu-list">
+                            <li><span class="dish-name" data-en="Green salad" data-nl="Groene salade">Salade verte</span><span class="leader"></span><span class="dish-price">+ 3 €</span></li>
+                            <li><span class="dish-name" data-en="Fries" data-nl="Friet">Frites</span><span class="leader"></span><span class="dish-price">+ 4 €</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- SALADES -->
+                    <div class="menu-category col-break">
+                        <h3><span data-en="Salads" data-nl="Salades">Salades</span> <span class="cat-price">15 €</span></h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Océane <small>lettuce, tomato, cucumber, avocado, smoked salmon</small>" data-nl="Océane <small>sla, tomaat, komkommer, avocado, gerookte zalm</small>">Océane <small>salade, tomate, concombre, avocat, saumon fumé</small></span></li>
+                            <li><span class="dish-name" data-en="Camembert <small>lettuce, tomato, smoked bacon, toasted camembert</small>" data-nl="Camembert <small>sla, tomaat, gerookt spek, geroosterde camembert</small>">Camembert <small>salade, tomate, poitrine fumée, camembert toasté</small></span></li>
+                            <li><span class="dish-name" data-en="Bistrot <small>lettuce, tomato, croutons, smoked bacon, poached egg</small>" data-nl="Bistrot <small>sla, tomaat, croutons, gerookt spek, gepocheerd ei</small>">Bistrot <small>salade, tomate, croûtons, poitrine fumée, œuf poché</small></span></li>
+                            <li><span class="dish-name" data-en="Cocotte <small>lettuce, tomato, chicken, comté, hard-boiled egg</small>" data-nl="Cocotte <small>sla, tomaat, kip, comté, hardgekookt ei</small>">Cocotte <small>salade, tomate, poulet, comté, œuf dur</small></span></li>
+                            <li><span class="dish-name" data-en="Fraîcheur <em>(vegetarian)</em> <small>lettuce, tomato, cucumber, apple, fresh goat cheese</small>" data-nl="Fraîcheur <em>(vegetarisch)</em> <small>sla, tomaat, komkommer, appel, verse geitenkaas</small>">Fraîcheur <em>(végétarien)</em> <small>salade, tomate, concombre, pomme, chèvre frais</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- CROQUES -->
+                    <div class="menu-category">
+                        <h3><span data-en="Croques" data-nl="Croques">Croques</span> <span class="cat-price">12 €</span></h3>
+                        <p class="cat-note" data-en="Artisan bread, served with salad" data-nl="Ambachtelijk brood, met sla">Pain artisanal, salade</p>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name">Croque monsieur</span></li>
+                            <li><span class="dish-name">Croque madame <small>+1 €</small></span></li>
+                            <li><span class="dish-name" data-en="Goat cheese croque <em>(vegetarian)</em>" data-nl="Croque met geitenkaas <em>(vegetarisch)</em>">Croque chèvre <em>(végétarien)</em></span></li>
+                            <li><span class="dish-name" data-en="Chicken croque" data-nl="Croque met kip">Croque poulet</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- CLUBS -->
+                    <div class="menu-category">
+                        <h3><span data-en="Club sandwiches" data-nl="Clubsandwiches">Clubs</span> <span class="cat-price">12 €</span></h3>
+                        <p class="cat-note" data-en="Artisan bread" data-nl="Ambachtelijk brood">Pain artisanal</p>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Chicken <small>lettuce, tomato, bacon, hard-boiled egg, mayonnaise</small>" data-nl="Kip <small>sla, tomaat, spek, hardgekookt ei, mayonaise</small>">Poulet <small>salade, tomate, bacon, œuf dur, mayonnaise</small></span></li>
+                            <li><span class="dish-name" data-en="Salmon <small>lettuce, tomato, avocado, cucumber, fresh cheese</small>" data-nl="Zalm <small>sla, tomaat, avocado, komkommer, verse kaas</small>">Saumon <small>salade, tomate, avocat, concombre, fromage frais</small></span></li>
+                            <li><span class="dish-name" data-en="Ham <small>lettuce, tomato, cheddar, hard-boiled egg, mayonnaise</small>" data-nl="Ham <small>sla, tomaat, cheddar, hardgekookt ei, mayonaise</small>">Jambon <small>salade, tomate, cheddar, œuf dur, mayonnaise</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- PLANCHES -->
+                    <div class="menu-category">
+                        <h3><span data-en="Sharing boards" data-nl="Plankjes">Planches</span> <span class="cat-price">15 €</span></h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Charcuterie <small>pork and camembert terrine, Lessay smoked ham, chorizo, dry sausage</small>" data-nl="Charcuterie <small>varkens- en camembertterrine, gerookte ham van Lessay, chorizo, droge worst</small>">Charcut' <small>terrine de porc au camembert, jambon fumé de Lessay, chorizo, saucisson sec</small></span></li>
+                            <li><span class="dish-name" data-en="Cheese <small>camembert, Pont-l'Évêque, Livarot, fresh goat cheese, comté, cheddar</small>" data-nl="Kaas <small>camembert, Pont-l'Évêque, Livarot, verse geitenkaas, comté, cheddar</small>">Fromagère <small>camembert, Pont-l'Évêque, Livarot, chèvre frais, comté, cheddar</small></span></li>
+                            <li><span class="dish-name" data-en="Mixed <small>cheese and charcuterie</small>" data-nl="Gemengd <small>kaas en charcuterie</small>">Mixte <small>mix fromagère et charcut'</small></span></li>
+                            <li><span class="dish-name" data-en="Seafood <small>fish terrine, pink shrimp, smoked salmon</small>" data-nl="Zeevruchten <small>visterrine, roze garnalen, gerookte zalm</small>">Côté mer <small>terrine de poissons, crevettes roses, saumon fumé</small></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- BAMBINO -->
+                    <div class="menu-category">
+                        <h3><span data-en="Kids menu" data-nl="Kindermenu">Menu Bambino</span> <span class="cat-price">10 €</span></h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Burger and fries" data-nl="Burger met friet">Burger frites</span></li>
+                            <li><span class="dish-name" data-en="Strawberry sundae" data-nl="Aardbeiencoupe">Sundae fraise</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- COUPES GLACÉES -->
+                    <div class="menu-category">
+                        <h3><span data-en="Ice cream sundaes" data-nl="IJscoupes">Coupes glacées</span> <span class="cat-price">8,50 €</span></h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Caramel, coffee or chocolate liégeois" data-nl="Liégeois met karamel, koffie of chocolade">Caramel, café ou chocolat liégeois</span></li>
+                            <li><span class="dish-name">Dame blanche</span></li>
+                            <li><span class="dish-name" data-en="Strawberry sundae" data-nl="Aardbeiencoupe">Sundae fraise</span></li>
+                            <li><span class="dish-name">Colonel</span></li>
+                            <li><span class="dish-name">Trou normand</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- RUBRIQUE VINS : mène à l'onglet « Vins » -->
+                <div class="menu-category wine-teaser">
+                    <h3><span data-en="Wine bar" data-nl="Wijnbar">Bar à vin</span> <span class="cat-price" data-en="from &euro;5" data-nl="vanaf &euro;5">dès 5 €</span></h3>
+                    <p class="wine-teaser-text" data-en="A selection of wines from estate-owner winemakers, by the glass (12.5 cl), 50 cl or by the bottle (75 cl)." data-nl="Een selectie wijnen van wijnbouwers die hun eigen wijn maken, per glas (12,5 cl), 50 cl of per fles (75 cl).">Une sélection de vins de propriétaires récoltants, au verre (12,5 cl), en 50 cl ou en bouteille (75 cl).</p>
+                    <ul class="wine-kinds">
+                        <li><span class="wine-dot wine-dot-blanc"></span><strong data-en="White" data-nl="Wit">Blancs</strong><small data-en="glass &euro;5 to &euro;9" data-nl="glas &euro;5 tot &euro;9">verre de 5 à 9 €</small></li>
+                        <li><span class="wine-dot wine-dot-rose"></span><strong>Rosés</strong><small data-en="glass &euro;5 to &euro;7" data-nl="glas &euro;5 tot &euro;7">verre de 5 à 7 €</small></li>
+                        <li><span class="wine-dot wine-dot-rouge"></span><strong data-en="Red" data-nl="Rood">Rouges</strong><small data-en="glass &euro;5 to &euro;8" data-nl="glas &euro;5 tot &euro;8">verre de 5 à 8 €</small></li>
+                    </ul>
+                    <button type="button" class="btn-wine" data-goto-tab="panel-vins" data-en="See the wine list" data-nl="Bekijk de wijnkaart">Voir la carte des vins</button>
+                </div>
+            </div>
+
+            <!-- ===================== PANNEAU : BOISSONS ===================== -->
+            <div class="carte-panel" id="panel-boissons" role="tabpanel" hidden>
+                <div class="menu-grid">
+
+                    <div class="menu-category">
+                        <h3 data-en="Soft drinks" data-nl="Frisdranken">Boissons fraîches</h3>
+                        <ul class="menu-list">
+                            <li><span class="dish-name">Coca-Cola, Coca-Cola zéro <small>33 cl</small></span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name">Orangina, Fuze Tea <small>25 cl</small></span><span class="dish-price">4,20 €</span></li>
+                            <li><span class="dish-name" data-en="Lemonade <small>33 cl</small>" data-nl="Limonade <small>33 cl</small>">Limonade <small>33 cl</small></span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name">Diabolo <small>33 cl</small></span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Schweppes tonic or citrus <small>25 cl</small>" data-nl="Schweppes tonic of citrus <small>25 cl</small>">Schweppes tonic ou agrumes <small>25 cl</small></span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Fruit juice <small>25 cl, multifruit, orange, pineapple, tomato, apple</small>" data-nl="Fruitsap <small>25 cl, multivruchten, sinaasappel, ananas, tomaat, appel</small>">Jus de fruits <small>25 cl, multifruit, orange, ananas, tomate, pomme</small></span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Syrup with water <small>25 cl, lemon, strawberry, grenadine, mint</small>" data-nl="Siroop met water <small>25 cl, citroen, aardbei, grenadine, munt</small>">Sirop à l'eau <small>25 cl, citron, fraise, grenadine, menthe</small></span><span class="dish-price">3,00 €</span></li>
+                            <li><span class="dish-name" data-en="Mineral water <small>still or sparkling, 33 cl / 75 cl</small>" data-nl="Mineraalwater <small>plat of bruisend, 33 cl / 75 cl</small>">Eau minérale <small>gazeuse ou plate, 33 cl / 75 cl</small></span><span class="dish-price">4,00 € / 6,00 €</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 data-en="Hot drinks" data-nl="Warme dranken">Boissons chaudes</h3>
+                        <ul class="menu-list">
+                            <li><span class="dish-name" data-en="Coffee, decaf <small>Lavazza</small>" data-nl="Koffie, decafé <small>Lavazza</small>">Café, décaféiné <small>Lavazza</small></span><span class="dish-price">2,20 €</span></li>
+                            <li><span class="dish-name" data-en="Long coffee" data-nl="Lungo">Café allongé</span><span class="dish-price">2,50 €</span></li>
+                            <li><span class="dish-name" data-en="Espresso macchiato" data-nl="Espresso macchiato">Café noisette</span><span class="dish-price">2,50 €</span></li>
+                            <li><span class="dish-name" data-en="Double espresso" data-nl="Dubbele espresso">Double café</span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Coffee with cream" data-nl="Koffie met room">Café crème</span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name">Cappuccino</span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name" data-en="Hot chocolate" data-nl="Warme chocolademelk">Chocolat chaud</span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Tea or herbal tea" data-nl="Thee of kruidenthee">Thé ou infusion</span><span class="dish-price">4,50 €</span></li>
+                            <li><span class="dish-name" data-en="Viennese coffee or chocolate" data-nl="Weense koffie of chocolademelk">Café ou chocolat viennois</span><span class="dish-price">5,50 €</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 data-en="Beers" data-nl="Bieren">Bières</h3>
+                        <p class="cat-note" data-en="Draught: 25 cl / 50 cl" data-nl="Van het vat: 25 cl / 50 cl">Pression : 25 cl / 50 cl</p>
+                        <ul class="menu-list">
+                            <li><span class="dish-name">Heineken</span><span class="dish-price">4,50 € / 8,50 €</span></li>
+                            <li><span class="dish-name">Affligem</span><span class="dish-price">5,00 € / 9,50 €</span></li>
+                            <li><span class="dish-name" data-en="Shandy / Monaco" data-nl="Radler / Monaco">Panaché / Monaco</span><span class="dish-price">4,50 € / 8,50 €</span></li>
+                        </ul>
+                        <p class="cat-note" data-en="Bottles: 33 cl" data-nl="Flessen: 33 cl">Bouteilles : 33 cl</p>
+                        <ul class="menu-list">
+                            <li><span class="dish-name" data-en="Yata <small>blonde, white, amber or triple</small>" data-nl="Yata <small>blond, wit, amber of tripel</small>">Yata <small>blonde, blanche, ambrée ou triple sec</small></span><span class="dish-price">7,50 €</span></li>
+                            <li><span class="dish-name" data-en="Heineken alcohol-free" data-nl="Heineken alcoholvrij">Heineken sans alcool</span><span class="dish-price">5,50 €</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 data-en="Cider &amp; sparkling" data-nl="Cider &amp; bubbels">Cidre &amp; bulles</h3>
+                        <ul class="menu-list">
+                            <li><span class="dish-name">Cidre Huet <small>15 cl / 75 cl</small></span><span class="dish-price">4,00 € / 16,00 €</span></li>
+                            <li><span class="dish-name">Prosecco DOC <small>Italie, Dissegna, 75 cl</small></span><span class="dish-price">29,00 €</span></li>
+                            <li><span class="dish-name">Champagne Guy Lamoureux <small>Brut, 75 cl</small></span><span class="dish-price">59,00 €</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3>Cocktails <span class="cat-price">12 €</span></h3>
+                        <ul class="menu-list menu-list-plain">
+                            <li><span class="dish-name" data-en="Gin Tonic <small>gin, Schweppes, lemon</small>" data-nl="Gin Tonic <small>gin, Schweppes, citroen</small>">Gin Tonic <small>gin, Schweppes, citron jaune</small></span></li>
+                            <li><span class="dish-name" data-en="Gin Fizz <small>gin, lemon juice, sparkling water</small>" data-nl="Gin Fizz <small>gin, citroensap, bruisend water</small>">Gin Fizz <small>gin, jus de citron, eau gazeuse</small></span></li>
+                            <li><span class="dish-name" data-en="Planter's punch <small>rum, multifruit juice</small>" data-nl="Planteur <small>rum, multivruchtensap</small>">Planteur <small>rhum, multifruit</small></span></li>
+                            <li><span class="dish-name" data-en="Mojito <small>rum, fresh mint, lime, cane sugar, sparkling water</small>" data-nl="Mojito <small>rum, verse munt, limoen, rietsuiker, bruisend water</small>">Mojito <small>rhum, menthe fraîche, citron vert, sucre de canne, eau gazeuse</small></span></li>
+                            <li><span class="dish-name" data-en="Cuba Libre <small>rum, Coca-Cola, lime</small>" data-nl="Cuba Libre <small>rum, Coca-Cola, limoen</small>">Cuba Libre <small>rhum, Coca-Cola, citron vert</small></span></li>
+                            <li><span class="dish-name" data-en="Margarita <small>tequila, Cointreau, lemon juice</small>" data-nl="Margarita <small>tequila, Cointreau, citroensap</small>">Margarita <small>tequila, Cointreau, jus de citron</small></span></li>
+                            <li><span class="dish-name" data-en="Tequila Sunrise <small>tequila, orange juice, grenadine</small>" data-nl="Tequila Sunrise <small>tequila, sinaasappelsap, grenadine</small>">Tequila Sunrise <small>tequila, jus d'orange, grenadine</small></span></li>
+                            <li><span class="dish-name" data-en="Bloody Mary <small>vodka, tomato juice</small>" data-nl="Bloody Mary <small>wodka, tomatensap</small>">Bloody Mary <small>vodka, jus de tomate</small></span></li>
+                            <li><span class="dish-name" data-en="Kamikaze <small>vodka, Cointreau, lemon juice</small>" data-nl="Kamikaze <small>wodka, Cointreau, citroensap</small>">Kamikaze <small>vodka, Cointreau, jus de citron</small></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3 data-en="Aperitifs" data-nl="Aperitieven">Apéritifs</h3>
+                        <ul class="menu-list">
+                            <li><span class="dish-name" data-en="White wine kir <small>12 cl, blackcurrant, blackberry or peach</small>" data-nl="Kir witte wijn <small>12 cl, zwarte bes, braam of perzik</small>">Kir vin blanc <small>12 cl, crème de cassis, mûre ou pêche</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name">Kir Normand <small>12 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name">Prosecco <small>12 cl</small></span><span class="dish-price">6,00 €</span></li>
+                            <li><span class="dish-name">Kir Prosecco <small>12 cl</small></span><span class="dish-price">7,00 €</span></li>
+                            <li><span class="dish-name" data-en="Glass of champagne <small>12 cl</small>" data-nl="Glas champagne <small>12 cl</small>">Coupe de champagne <small>12 cl</small></span><span class="dish-price">11,00 €</span></li>
+                            <li><span class="dish-name">Kir Royal <small>12 cl</small></span><span class="dish-price">12,00 €</span></li>
+                            <li><span class="dish-name">Ricard <small>3 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name" data-en="Martini red or white <small>8 cl</small>" data-nl="Martini rood of wit <small>8 cl</small>">Martini rouge ou blanc <small>8 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name">Campari <small>8 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name" data-en="Red port <small>8 cl</small>" data-nl="Rode port <small>8 cl</small>">Porto rouge <small>8 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name">Pommeau <small>8 cl</small></span><span class="dish-price">5,00 €</span></li>
+                            <li><span class="dish-name">Spritz</span><span class="dish-price">10,00 €</span></li>
+                            <li><span class="dish-name">Americano <small>12 cl</small></span><span class="dish-price">10,00 €</span></li>
+                            <li><span class="dish-name">Ti' Punch <small>4 cl</small></span><span class="dish-price">10,00 €</span></li>
+                            <li><span class="dish-name">Long Drink <small>alcool + Coca-Cola ou jus d'orange</small></span><span class="dish-price">10,00 €</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category menu-category-full">
+                        <h3><span data-en="Digestifs" data-nl="Digestieven">Digestifs</span> <span class="cat-price">4 cl</span></h3>
+                        <ul class="menu-list">
+                            <li><span class="dish-name" data-en="Calvados Huet <small>2 years</small>" data-nl="Calvados Huet <small>2 jaar</small>">Calvados Huet <small>2 ans</small></span><span class="dish-price">6,00 €</span></li>
+                            <li><span class="dish-name" data-en="Calvados Huet <small>hors d'âge, 12 years</small>" data-nl="Calvados Huet <small>hors d'âge, 12 jaar</small>">Calvados Huet <small>hors d'âge, 12 ans</small></span><span class="dish-price">10,00 €</span></li>
+                            <li><span class="dish-name">Cognac</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Get 27</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name" data-en="Rum" data-nl="Rum">Rhum</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Gin</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name" data-en="Vodka" data-nl="Wodka">Vodka</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Cointreau</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Tequila</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Whisky</span><span class="dish-price">8,00 €</span></li>
+                            <li><span class="dish-name">Chivas</span><span class="dish-price">10,00 €</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===================== PANNEAU : VINS ===================== -->
+            <div class="carte-panel" id="panel-vins" role="tabpanel" hidden>
+                <div class="vins-head">
+                    <span></span><span>12,5 cl</span><span>50 cl</span><span>75 cl</span>
+                </div>
+
+                <div class="vins-group">
+                    <h3 data-en="White wines" data-nl="Witte wijnen">Vins blancs</h3>
+                    <ul class="vins-list">
+                        <li><span class="vin-name">Muscadet sur Lie <small>Loire</small></span><span>5 €</span><span>15 €</span><span>23 €</span></li>
+                        <li><span class="vin-name">Chardonnay <small>Sud-Est, IGP Gard</small></span><span>6 €</span><span>18 €</span><span>27 €</span></li>
+                        <li><span class="vin-name">Graves <small>Bordeaux, Château Carbon d'Artigues</small></span><span>6 €</span><span>18 €</span><span>27 €</span></li>
+                        <li><span class="vin-name">Bourgogne « Les Bruyères » <small>Domaine de la Creuse Noire</small></span><span>7 €</span><span>21 €</span><span>33 €</span></li>
+                        <li><span class="vin-name">Coteaux du Layon <small>Loire</small></span><span>8 €</span><span>24 €</span><span>37 €</span></li>
+                        <li><span class="vin-name">Pinot Gris <small data-en="Alsace, G. Metz" data-nl="Elzas, G. Metz">Alsace, G. Metz</small></span><span>8 €</span><span>24 €</span><span>37 €</span></li>
+                        <li><span class="vin-name">Pouilly Fumé <small>Loire</small></span><span>9 €</span><span>27 €</span><span>43 €</span></li>
+                    </ul>
+                </div>
+
+                <div class="vins-group">
+                    <h3 data-en="Rosé wines" data-nl="Rosé wijnen">Vins rosés</h3>
+                    <ul class="vins-list">
+                        <li><span class="vin-name">IGP Méditerranée <small>Côtes du Rhône, Domaine des 3 Lys</small></span><span>5 €</span><span>15 €</span><span>23 €</span></li>
+                        <li><span class="vin-name">Côtes de Provence <small>Sud-Est, Château de Beaumel</small></span><span>7 €</span><span>21 €</span><span>33 €</span></li>
+                    </ul>
+                </div>
+
+                <div class="vins-group">
+                    <h3 data-en="Red wines" data-nl="Rode wijnen">Vins rouges</h3>
+                    <ul class="vins-list">
+                        <li><span class="vin-name">Côtes du Rhône Rochegude <small>Domaine des 3 Lys</small></span><span>5 €</span><span>15 €</span><span>23 €</span></li>
+                        <li><span class="vin-name">Saint-Nicolas de Bourgueil <small>Loire</small></span><span>7 €</span><span>21 €</span><span>33 €</span></li>
+                        <li><span class="vin-name">Coteaux Bourguignons « Les champs du voisin » <small>Domaine de la Creuse Noire</small></span><span>7 €</span><span>21 €</span><span>33 €</span></li>
+                        <li><span class="vin-name">Saint-Amour « Belle vue » <small>Beaujolais, Domaine de la Creuse Noire</small></span><span>7 €</span><span>21 €</span><span>33 €</span></li>
+                        <li><span class="vin-name">Graves <small>Bordeaux, Château Carbon d'Artigues</small></span><span>8 €</span><span>24 €</span><span>37 €</span></li>
+                        <li><span class="vin-name">Sancerre <small>Loire, AOP</small></span><span>&ndash;</span><span>&ndash;</span><span>47 €</span></li>
+                        <li><span class="vin-name">Saint-Émilion <small>Bordeaux</small></span><span>&ndash;</span><span>&ndash;</span><span>43 €</span></li>
+                    </ul>
+                </div>
+
+                <p class="vins-note" data-en="All our bottled wines come from estate-owner winemakers." data-nl="Al onze wijnen op fles zijn afkomstig van wijnbouwers die hun eigen wijn maken.">Tous nos vins en bouteille sont de propriétaires récoltants.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION ILLUSTRATION PLATS & DESSERTS -->
+    <section class="gallery-preview container">
+        <h2 data-en="Homemade, in pictures" data-nl="Huisgemaakt, in beeld">Le fait maison en images</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="images/tartare-avocat.png" alt="Tartare d'avocat et terrine de porc sur ardoise" loading="lazy">
+                <p data-en="Avocado tartare &amp; pork terrine" data-nl="Avocadotartaar &amp; varkensterrine">Tartare d'avocat &amp; terrine de porc</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/tarte-mousse.png" alt="Tarte normande au caramel et mousse au chocolat" loading="lazy">
+                <p data-en="Norman tart &amp; chocolate mousse" data-nl="Normandische taart &amp; chocolademousse">Tarte normande &amp; mousse au chocolat</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/hampe-echalote.png" alt="Hampe de bœuf sauce échalote et frites" loading="lazy">
+                <p data-en="Beef skirt, shallot sauce &mdash; one of our suggestions" data-nl="Runderhanger met sjalotsaus &mdash; een van onze suggesties">Hampe de bœuf sauce échalote, une de nos suggestions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INFOS PRATIQUES / CONTACT & RÉSERVATION -->
+    <section class="info-section container" id="contact">
+        <h2 data-en="Information &amp; Bookings" data-nl="Informatie &amp; Reserveren">Informations &amp; Réservations</h2>
+        <div class="info-layout">
+            <div class="info-block">
+                <h3 data-en="Find us" data-nl="Vind ons">Nous trouver</h3>
+                <p>21 rue de la Ville<br>14600 Honfleur</p>
+                <p class="info-note" data-en="Car park nearby, next to the cinema." data-nl="Parking in de buurt, bij de bioscoop.">Parking à proximité, au niveau du cinéma.</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=L%27Enclos%2C+21+rue+de+la+Ville%2C+14600+Honfleur" class="link-route-btn" target="_blank" rel="noopener" data-en="Directions" data-nl="Route">Itinéraire</a>
+            </div>
+
+            <div class="info-block">
+                <h3 data-en="Opening hours" data-nl="Openingstijden">Horaires d'ouverture</h3>
+                <p data-en="Tuesday to Sunday<br>10am&nbsp;&ndash;&nbsp;9pm, non-stop service<br><em>Closed on Mondays</em>" data-nl="Dinsdag t/m zondag<br>10.00&nbsp;&ndash;&nbsp;21.00 uur, doorlopend geserveerd<br><em>Maandag gesloten</em>">Du mardi au dimanche<br>10h00&nbsp;–&nbsp;21h00, service en continu<br><em>Fermé le lundi</em></p>
+            </div>
+
+            <div class="info-block">
+                <h3 data-en="Bookings" data-nl="Reserveren">Réservations</h3>
+                <p data-en="Terrace or dining room. The dining room can be privatised on request." data-nl="Terras of zaal. De zaal kan op aanvraag worden afgehuurd.">En terrasse ou en salle. Salle privatisable sur demande.</p>
+                <div class="info-actions">
+                    <a href="tel:0621372037" class="link-tel-btn" data-en="Call us" data-nl="Bel ons">Par téléphone</a>
+                    <a href="https://www.instagram.com/lenclos.honfleur" class="link-route-btn link-insta" target="_blank" rel="noopener">Instagram</a>
+                </div>
+                <p class="info-contact-details"><a href="tel:0621372037">06 21 37 20 37</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2026 L'Enclos &ndash; <span data-en="All rights reserved" data-nl="Alle rechten voorbehouden">Tous droits réservés</span> | <a href="mentions-legales.html" data-en="Legal notice" data-nl="Juridische informatie">Mentions légales</a></p>
+    </footer>
+
+    <!-- SCRIPT : HORAIRES + LANGUES + ONGLETS -->
+    <script>
+        /* ---------- Langue ---------- */
+        const btnNl = document.getElementById("lang-toggle-nl");
+        const btnEn = document.getElementById("lang-toggle-en");
+        let currentLang = "fr";
+
+        /* ---------- Horaires (ouvert du mardi au dimanche, 10h - 21h, heure de Paris) ---------- */
+        const horaireTextes = {
+            fr: { ouvert: "Ouvert · jusqu'à 21h", ferme: "Fermé · ouvert de 10h à 21h", lundi: "Fermé aujourd'hui" },
+            en: { ouvert: "Open · until 9pm", ferme: "Closed · open 10am to 9pm", lundi: "Closed today" },
+            nl: { ouvert: "Open · tot 21.00 uur", ferme: "Gesloten · open 10.00 tot 21.00 uur", lundi: "Vandaag gesloten" }
+        };
+
+        function majHoraire() {
+            const el = document.getElementById("horaire-du-jour");
+            const dot = document.getElementById("horaire-dot");
+            if (!el) return;
+            const parts = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Europe/Paris", weekday: "short", hour: "numeric", hour12: false
+            }).formatToParts(new Date());
+            const jour = parts.find(function (p) { return p.type === "weekday"; }).value;
+            const heure = parseInt(parts.find(function (p) { return p.type === "hour"; }).value, 10) % 24;
+            const t = horaireTextes[currentLang];
+            let etat = "ferme";
+            if (jour === "Mon") {
+                etat = "lundi";
+            } else if (heure >= 10 && heure < 21) {
+                etat = "ouvert";
+            }
+            el.textContent = t[etat];
+            if (dot) { dot.classList.toggle("closed", etat !== "ouvert"); }
+        }
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.setAttribute("lang", lang);
+            document.querySelectorAll("[data-en]").forEach(function (el) {
+                if (el.dataset.fr === undefined) {
+                    el.dataset.fr = el.innerHTML;
+                }
+                if (lang === "en") {
+                    el.innerHTML = el.dataset.en;
+                } else if (lang === "nl") {
+                    el.innerHTML = el.dataset.nl;
+                } else {
+                    el.innerHTML = el.dataset.fr;
+                }
+            });
+            if (btnNl) {
+                btnNl.classList.toggle("active", lang === "nl");
+                btnNl.setAttribute("aria-pressed", String(lang === "nl"));
+                btnNl.setAttribute("aria-label", lang === "nl" ? "Voir la carte en français" : "Bekijk de kaart in het Nederlands");
+                btnNl.setAttribute("title", lang === "nl" ? "Voir en français" : "Bekijk in het Nederlands");
+            }
+            if (btnEn) {
+                btnEn.classList.toggle("active", lang === "en");
+                btnEn.setAttribute("aria-pressed", String(lang === "en"));
+                btnEn.setAttribute("aria-label", lang === "en" ? "Voir la carte en français" : "Voir la carte en anglais");
+                btnEn.setAttribute("title", lang === "en" ? "Voir en français" : "View in English");
+            }
+            majHoraire();
+        }
+
+        if (btnNl) {
+            btnNl.addEventListener("click", function () { setLang(currentLang === "nl" ? "fr" : "nl"); });
+        }
+        if (btnEn) {
+            btnEn.addEventListener("click", function () { setLang(currentLang === "en" ? "fr" : "en"); });
+        }
+        majHoraire();
+
+        /* ---------- Onglets de la carte ---------- */
+        const tabs = document.querySelectorAll(".carte-tab");
+        const panels = document.querySelectorAll(".carte-panel");
+        document.querySelectorAll("[data-goto-tab]").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const cible = document.querySelector('.carte-tab[data-tab="' + btn.dataset.gotoTab + '"]');
+                if (cible) {
+                    cible.click();
+                    document.querySelector(".carte-tabs").scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+        tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                tabs.forEach(function (t) {
+                    const actif = t === tab;
+                    t.classList.toggle("active", actif);
+                    t.setAttribute("aria-selected", String(actif));
+                });
+                panels.forEach(function (p) {
+                    p.hidden = p.id !== tab.dataset.tab;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
