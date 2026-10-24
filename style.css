@@ -271,21 +271,59 @@ body {
 }
 
 /* Le cadrage écarte les bords de la photo (flèches de capture) et les clients à droite */
+/* Diaporama en fondu enchaîné : 2 photos, 5 s chacune */
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
 .hero-img {
     position: absolute;
     top: 0;
-    left: -4%;
-    width: 128%;
     max-width: none;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    animation: hero-fondu 12s infinite;
+}
+
+/* le cadrage écarte les bords de la capture et les clients à droite */
+.hero-img-terrasse {
+    left: -4%;
+    width: 128%;
     object-position: 50% 62%;
+    opacity: 1;
+}
+
+.hero-img-facade {
+    left: 0;
+    width: 100%;
+    object-position: 50% 20%;
+    animation-delay: -6s;
+}
+
+@keyframes hero-fondu {
+    0%   { opacity: 1; }
+    42%  { opacity: 1; }
+    50%  { opacity: 0; }
+    92%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-img {
+        animation: none;
+    }
+    .hero-img-facade {
+        display: none;
+    }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(46, 41, 38, 0.35), rgba(46, 41, 38, 0.55));
+    background: linear-gradient(rgba(46, 41, 38, 0.1) 0%, rgba(46, 41, 38, 0.25) 45%, rgba(46, 41, 38, 0.72) 100%);
     z-index: 1;
 }
 
@@ -293,11 +331,11 @@ body {
     position: absolute;
     inset: 0;
     z-index: 2;
-    padding: 0 24px;
+    padding: 0 24px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .hero-kicker {
@@ -1218,13 +1256,12 @@ body {
         background: #fff;
     }
 
-    .hero-img {
-        position: static;
-        display: block;
-        width: 128%;
+    .hero-slides {
+        position: relative;
         height: 260px;
-        margin-left: -4%;
-        object-fit: cover;
+    }
+
+    .hero-img-terrasse {
         object-position: 50% 70%;
     }
 
