@@ -345,7 +345,7 @@ body {
     margin-bottom: 12px;
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-family: var(--font-title);
     font-style: italic;
     font-weight: 500;
@@ -1241,7 +1241,7 @@ body {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    .hero-content h2 {
+    .hero-content h1 {
         font-size: 2.4rem;
     }
 }
@@ -1280,7 +1280,7 @@ body {
         color: var(--sage);
     }
 
-    .hero-content h2 {
+    .hero-content h1 {
         color: var(--taupe-dark);
         font-size: 2.2rem;
     }

@@ -3,50 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Enclos - Bistrot & bar à vin à Honfleur</title>
-    <meta name="description" content="L'Enclos, bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux, terrasse et salle. Ouvert du mardi au dimanche, de 10h à 21h.">
+    <title>L'Enclos | Bistrot & bar à vin à Honfleur, cuisine maison</title>
+    <meta name="description" content="L'Enclos, bistrot familial et bar à vin au cœur du vieux Honfleur, 21 rue de la Ville. Cuisine maison, produits locaux, terrasse. Ouvert du mardi au dimanche.">
+    <link rel="canonical" href="https://lenclos-honfleur.fr/">
+    <meta name="theme-color" content="#7a6f69">
+    <meta name="format-detection" content="telephone=yes">
 
     <!-- Icônes -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <!-- Aperçu lors du partage (WhatsApp, Facebook...) : ajouter og:url et l'adresse complète de og:image quand le nom de domaine sera choisi -->
-    <meta property="og:type" content="website">
+    <!-- Chargement plus rapide : première photo et polices du titre -->
+    <link rel="preload" as="image" href="images/terrasse.webp" type="image/webp">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-400.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/cormorantgaramond-500-italic.woff2" crossorigin>
+
+    <!-- Aperçu lors du partage (WhatsApp, Facebook, iMessage...) -->
+    <meta property="og:type" content="restaurant">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:locale:alternate" content="nl_NL">
     <meta property="og:site_name" content="L'Enclos">
-    <meta property="og:title" content="L'Enclos - Bistrot & bar à vin à Honfleur">
-    <meta property="og:description" content="Bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux, terrasse et salle.">
-    <meta property="og:image" content="apercu-partage.jpg">
+    <meta property="og:title" content="L'Enclos | Bistrot & bar à vin à Honfleur">
+    <meta property="og:description" content="Bistrot familial et bar à vin au cœur du vieux Honfleur. Cuisine maison, produits locaux, terrasse et salle.">
+    <meta property="og:url" content="https://lenclos-honfleur.fr/">
+    <meta property="og:image" content="https://lenclos-honfleur.fr/apercu-partage.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="L'Enclos, bistrot et bar à vin à Honfleur">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L'Enclos | Bistrot & bar à vin à Honfleur">
+    <meta name="twitter:description" content="Bistrot familial et bar à vin au cœur du vieux Honfleur. Cuisine maison, produits locaux.">
+    <meta name="twitter:image" content="https://lenclos-honfleur.fr/apercu-partage.jpg">
 
+    <!-- Données structurées pour Google (restaurant, adresse, horaires, carte) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Restaurant",
+        "@type": ["Restaurant", "BarOrPub"],
+        "@id": "https://lenclos-honfleur.fr/#restaurant",
         "name": "L'Enclos",
-        "description": "Bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux.",
-        "servesCuisine": ["Française", "Normande"],
+        "alternateName": "L'Enclos Bistrot & Bar à vin",
+        "description": "Bistrot familial et bar à vin dans le vieux Honfleur, tenu par un père et son fils. Cuisine maison à partir de produits locaux, terrasse et salle privatisable.",
+        "url": "https://lenclos-honfleur.fr/",
         "telephone": "+33621372037",
+        "image": [
+            "https://lenclos-honfleur.fr/images/terrasse.webp",
+            "https://lenclos-honfleur.fr/images/facade.webp",
+            "https://lenclos-honfleur.fr/images/salle.webp"
+        ],
+        "logo": "https://lenclos-honfleur.fr/icon-512.png",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "21 rue de la Ville",
             "postalCode": "14600",
             "addressLocality": "Honfleur",
+            "addressRegion": "Normandie",
             "addressCountry": "FR"
         },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=L%27Enclos%2C+21+rue+de+la+Ville%2C+14600+Honfleur",
+        "servesCuisine": ["Française", "Normande", "Bistrot"],
+        "priceRange": "€€",
+        "currenciesAccepted": "EUR",
+        "acceptsReservations": "True",
+        "hasMenu": "https://lenclos-honfleur.fr/#carte",
         "openingHoursSpecification": [{
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": "10:00",
             "closes": "21:00"
         }],
+        "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Salle privatisable", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Menu enfant", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Option végétarienne", "value": true }
+        ],
         "sameAs": ["https://www.instagram.com/lenclos.honfleur"]
     }
-    </script>
-    <link rel="stylesheet" href="style.css?v=1">
+    </script>    <link rel="stylesheet" href="style.css?v=1">
 </head>
 <body>
 
@@ -75,13 +112,13 @@
     <section class="hero">
         <div class="hero-image-wrap">
             <div class="hero-slides" aria-hidden="false">
-                <img src="images/terrasse.webp" alt="La terrasse de L'Enclos à Honfleur" class="hero-img hero-img-terrasse">
-                <img src="images/facade.webp" alt="La façade de L'Enclos, bistrot et bar à vin, rue de la Ville à Honfleur" class="hero-img hero-img-facade">
+                <img src="images/terrasse.webp" alt="La terrasse de L'Enclos à Honfleur" class="hero-img hero-img-terrasse" fetchpriority="high" decoding="async">
+                <img src="images/facade.webp" alt="La façade de L'Enclos, bistrot et bar à vin, rue de la Ville à Honfleur" class="hero-img hero-img-facade" decoding="async">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <p class="hero-kicker" data-en="Honfleur" data-nl="Honfleur">Honfleur</p>
-                <h2 data-en="A warm bistro &amp; wine bar" data-nl="Een gezellige bistro &amp; wijnbar">Un bistrot convivial &amp; bar à vin</h2>
+                <p class="hero-kicker">L'Enclos</p>
+                <h1 data-en="A warm bistro &amp; wine bar in Honfleur" data-nl="Een gezellige bistro &amp; wijnbar in Honfleur">Bistrot convivial &amp; bar à vin à Honfleur</h1>
                 <p class="hero-text" data-en="Homemade cooking, local produce, on the terrace or in the dining room." data-nl="Huisgemaakte keuken, lokale producten, op het terras of in de zaal.">Cuisine maison, produits locaux, en terrasse ou en salle.</p>
                 <a href="#contact" class="btn-primary" data-en="Book a table" data-nl="Reserveren">Réserver</a>
             </div>
@@ -101,7 +138,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="images/salle.webp" alt="La salle intérieure de L'Enclos">
+                <img src="images/salle.webp" alt="La salle intérieure de L'Enclos, bistrot à Honfleur" width="773" height="659" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -444,15 +481,15 @@
         <h2 data-en="Homemade, in pictures" data-nl="Huisgemaakt, in beeld">Le fait maison en images</h2>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <img src="images/tartare-avocat.png" alt="Tartare d'avocat et terrine de porc sur ardoise" loading="lazy">
+                <img src="images/tartare-avocat.jpg" alt="Tartare d'avocat et terrine de porc sur ardoise" width="369" height="495" loading="lazy" decoding="async">
                 <p data-en="Avocado tartare &amp; pork terrine" data-nl="Avocadotartaar &amp; varkensterrine">Tartare d'avocat &amp; terrine de porc</p>
             </div>
             <div class="gallery-card">
-                <img src="images/tarte-mousse.png" alt="Tarte normande au caramel et mousse au chocolat" loading="lazy">
+                <img src="images/tarte-mousse.jpg" alt="Tarte normande au caramel et mousse au chocolat" width="565" height="490" loading="lazy" decoding="async">
                 <p data-en="Norman tart &amp; chocolate mousse" data-nl="Normandische taart &amp; chocolademousse">Tarte normande &amp; mousse au chocolat</p>
             </div>
             <div class="gallery-card">
-                <img src="images/hampe-echalote.png" alt="Hampe de bœuf sauce échalote et frites" loading="lazy">
+                <img src="images/hampe-echalote.jpg" alt="Hampe de bœuf sauce échalote et frites" width="347" height="462" loading="lazy" decoding="async">
                 <p data-en="Beef skirt, shallot sauce &mdash; one of our suggestions" data-nl="Runderhanger met sjalotsaus &mdash; een van onze suggesties">Hampe de bœuf sauce échalote, une de nos suggestions</p>
             </div>
         </div>

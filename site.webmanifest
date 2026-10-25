@@ -1,0 +1,14 @@
+{
+    "name": "L'Enclos, bistrot & bar à vin à Honfleur",
+    "short_name": "L'Enclos",
+    "description": "Bistrot familial et bar à vin à Honfleur. Cuisine maison, produits locaux.",
+    "lang": "fr",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#f7f3ec",
+    "theme_color": "#7a6f69",
+    "icons": [
+        { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+    ]
+}
