@@ -6,6 +6,10 @@
     <title>L'Enclos | Bistrot & bar à vin à Honfleur, cuisine maison</title>
     <meta name="description" content="L'Enclos, bistrot familial et bar à vin au cœur du vieux Honfleur, 21 rue de la Ville. Cuisine maison, produits locaux, terrasse. Ouvert du mardi au dimanche.">
     <link rel="canonical" href="https://lenclos-honfleur.fr/">
+    <link rel="alternate" hreflang="fr" href="https://lenclos-honfleur.fr/">
+    <link rel="alternate" hreflang="en" href="https://lenclos-honfleur.fr/en/">
+    <link rel="alternate" hreflang="nl" href="https://lenclos-honfleur.fr/nl/">
+    <link rel="alternate" hreflang="x-default" href="https://lenclos-honfleur.fr/">
     <meta name="theme-color" content="#7a6f69">
     <meta name="format-detection" content="telephone=yes">
 
@@ -148,9 +152,9 @@
         <div class="carte-container">
             <div class="carte-header">
                 <div class="carte-header-top">
-                    <button id="lang-toggle-nl" class="lang-flag lang-flag-nl" type="button" aria-pressed="false" aria-label="Bekijk de kaart in het Nederlands" title="Bekijk in het Nederlands"></button>
+                    <a class="lang-flag lang-flag-nl" href="nl/#carte" hreflang="nl" lang="nl" aria-label="Bekijk de kaart in het Nederlands" title="Bekijk in het Nederlands"></a>
                     <h2 data-en="Our Menu" data-nl="Onze Kaart">Notre Carte</h2>
-                    <button id="lang-toggle-en" class="lang-flag lang-flag-en" type="button" aria-pressed="false" aria-label="Voir la carte en anglais" title="View in English"></button>
+                    <a class="lang-flag lang-flag-en" href="en/#carte" hreflang="en" lang="en" aria-label="View the menu in English" title="View in English"></a>
                 </div>
                 <p class="sous-titre" data-en="Homemade, with local produce. All our meats are of French origin." data-nl="Huisgemaakt, met lokale producten. Al ons vlees is van Franse oorsprong.">Tout est fait maison, avec des produits locaux. Toutes nos viandes sont d'origine française.</p>
             </div>
@@ -528,12 +532,9 @@
         <p>&copy; 2026 L'Enclos &ndash; <span data-en="All rights reserved" data-nl="Alle rechten voorbehouden">Tous droits réservés</span> | <a href="mentions-legales.html" data-en="Legal notice" data-nl="Juridische informatie">Mentions légales</a></p>
     </footer>
 
-    <!-- SCRIPT : HORAIRES + LANGUES + ONGLETS -->
+    <!-- SCRIPT : HORAIRES + ONGLETS (la langue est donnée par l'attribut lang de la page) -->
     <script>
-        /* ---------- Langue ---------- */
-        const btnNl = document.getElementById("lang-toggle-nl");
-        const btnEn = document.getElementById("lang-toggle-en");
-        let currentLang = "fr";
+        const LANG = document.documentElement.getAttribute("lang") || "fr";
 
         /* ---------- Horaires (ouvert du mardi au dimanche, 10h - 21h, heure de Paris) ---------- */
         const horaireTextes = {
@@ -551,7 +552,7 @@
             }).formatToParts(new Date());
             const jour = parts.find(function (p) { return p.type === "weekday"; }).value;
             const heure = parseInt(parts.find(function (p) { return p.type === "hour"; }).value, 10) % 24;
-            const t = horaireTextes[currentLang];
+            const t = horaireTextes[LANG] || horaireTextes.fr;
             let etat = "ferme";
             if (jour === "Mon") {
                 etat = "lundi";
@@ -560,43 +561,6 @@
             }
             el.textContent = t[etat];
             if (dot) { dot.classList.toggle("closed", etat !== "ouvert"); }
-        }
-
-        function setLang(lang) {
-            currentLang = lang;
-            document.documentElement.setAttribute("lang", lang);
-            document.querySelectorAll("[data-en]").forEach(function (el) {
-                if (el.dataset.fr === undefined) {
-                    el.dataset.fr = el.innerHTML;
-                }
-                if (lang === "en") {
-                    el.innerHTML = el.dataset.en;
-                } else if (lang === "nl") {
-                    el.innerHTML = el.dataset.nl;
-                } else {
-                    el.innerHTML = el.dataset.fr;
-                }
-            });
-            if (btnNl) {
-                btnNl.classList.toggle("active", lang === "nl");
-                btnNl.setAttribute("aria-pressed", String(lang === "nl"));
-                btnNl.setAttribute("aria-label", lang === "nl" ? "Voir la carte en français" : "Bekijk de kaart in het Nederlands");
-                btnNl.setAttribute("title", lang === "nl" ? "Voir en français" : "Bekijk in het Nederlands");
-            }
-            if (btnEn) {
-                btnEn.classList.toggle("active", lang === "en");
-                btnEn.setAttribute("aria-pressed", String(lang === "en"));
-                btnEn.setAttribute("aria-label", lang === "en" ? "Voir la carte en français" : "Voir la carte en anglais");
-                btnEn.setAttribute("title", lang === "en" ? "Voir en français" : "View in English");
-            }
-            majHoraire();
-        }
-
-        if (btnNl) {
-            btnNl.addEventListener("click", function () { setLang(currentLang === "nl" ? "fr" : "nl"); });
-        }
-        if (btnEn) {
-            btnEn.addEventListener("click", function () { setLang(currentLang === "en" ? "fr" : "en"); });
         }
         majHoraire();
 
@@ -624,6 +588,5 @@
                 });
             });
         });
-    </script>
-</body>
+    </script></body>
 </html>
