@@ -78,6 +78,17 @@ foreach ($l in $langues) {
     $h = [regex]::Replace($h, $motif, $evaluateur, [System.Text.RegularExpressions.RegexOptions]::Singleline)
     $h = [regex]::Replace($h, '\sdata-(en|nl)="[^"]*"', "")
 
+    # anglais : prix à l'anglaise (€4.50 au lieu de 4,50 €), uniquement dans le texte visible
+    if ($c -eq "en") {
+        $h = [regex]::Replace($h, '(<[^>]*>)|([^<]+)', {
+            param($m)
+            if ($m.Groups[1].Success) { return $m.Value }
+            $x = $m.Groups[2].Value
+            $x = [regex]::Replace($x, '(\d+),(\d{2})(?:&nbsp;| )€', '€$1.$2')
+            $x = [regex]::Replace($x, '(\d+)(?:&nbsp;| )€', '€$1')
+            return $x
+        })
+    }
     # chemins relatifs : les pages sont dans un sous-dossier
     $h = [regex]::Replace($h, '(?<=\s(?:href|src)=")(?!https?:|//|#|mailto:|tel:|data:|\.\./)([^"]*)"', '../$1"')
 
