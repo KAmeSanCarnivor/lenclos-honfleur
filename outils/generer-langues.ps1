@@ -16,7 +16,7 @@ $langues = @(
     @{
         code = "en"; locale = "en_GB"; alternates = @("fr_FR", "nl_NL")
         title = "L'Enclos | Bistro & wine bar in Honfleur, homemade cooking"
-        description = "L'Enclos, family bistro and wine bar in the heart of old Honfleur, 21 rue de la Ville. Homemade cooking, local produce, terrace. Open Tuesday to Sunday, 10am to 9pm."
+        description = "L'Enclos, family bistro and wine bar in the heart of old Honfleur, 21 rue de la Ville. Homemade cooking, local produce, terrace. Opening hours adapted during school holidays."
         ogDescription = "Family bistro and wine bar in the heart of old Honfleur. Homemade cooking, local produce, terrace and dining room."
         ogTitle = "L'Enclos | Bistro & wine bar in Honfleur"
         ogAlt = "L'Enclos, bistro and wine bar in Honfleur"
@@ -38,7 +38,7 @@ $langues = @(
     @{
         code = "nl"; locale = "nl_NL"; alternates = @("fr_FR", "en_GB")
         title = "L'Enclos | Bistro & wijnbar in Honfleur, huisgemaakte keuken"
-        description = "L'Enclos, familiebistro en wijnbar in het hart van het oude Honfleur, 21 rue de la Ville. Huisgemaakte keuken, lokale producten, terras. Open dinsdag t/m zondag, 10.00 tot 21.00 uur."
+        description = "L'Enclos, familiebistro en wijnbar in het hart van het oude Honfleur, 21 rue de la Ville. Huisgemaakte keuken, lokale producten, terras. Aangepaste openingstijden tijdens de schoolvakanties."
         ogDescription = "Familiebistro en wijnbar in het hart van het oude Honfleur. Huisgemaakte keuken, lokale producten, terras en eetzaal."
         ogTitle = "L'Enclos | Bistro & wijnbar in Honfleur"
         ogAlt = "L'Enclos, bistro en wijnbar in Honfleur"

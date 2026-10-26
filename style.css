@@ -1396,3 +1396,53 @@ a.lang-flag {
 .lang-flag-fr {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23fff'/%3E%3Crect width='13.4' height='40' fill='%23002395'/%3E%3Crect x='26.6' width='13.4' height='40' fill='%23ED2939'/%3E%3C/svg%3E");
 }
+
+/* ---------- Horaires du jour (changent pendant les vacances scolaires) ---------- */
+.horaires-detail[hidden] {
+    display: none;
+}
+
+.horaires-periode {
+    display: inline-block;
+    margin: 2px 0 10px;
+    padding: 5px 14px;
+    background: var(--sage);
+    color: #fff !important;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.horaires-liste {
+    list-style: none;
+    max-width: 310px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.horaires-liste li {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 6px 10px;
+    border-bottom: 1px dotted var(--line);
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.horaires-liste li:last-child {
+    border-bottom: none;
+}
+
+.horaires-liste li.aujourdhui {
+    background: rgba(88, 119, 112, 0.14);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.horaires-note {
+    margin-top: 10px;
+    font-size: 0.8rem !important;
+    font-style: italic;
+}
