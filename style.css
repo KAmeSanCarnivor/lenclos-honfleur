@@ -1315,7 +1315,7 @@ body {
     max-width: 800px;
 }
 
-.legal-page h2 {
+.legal-page h1 {
     font-family: var(--font-title);
     font-style: italic;
     font-weight: 500;
@@ -1329,7 +1329,7 @@ body {
     margin-bottom: 30px;
 }
 
-.legal-block h3 {
+.legal-block h2 {
     font-family: var(--font-title);
     font-style: italic;
     font-weight: 500;
