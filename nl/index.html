@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Enclos | Bistro & wijnbar in Honfleur, huisgemaakte keuken</title>
-    <meta name="description" content="L'Enclos, familiebistro en wijnbar in het hart van het oude Honfleur, 21 rue de la Ville. Huisgemaakte keuken, lokale producten, terras. Open dinsdag t/m zondag, 10.00 tot 21.00 uur.">
+    <meta name="description" content="L'Enclos, familiebistro en wijnbar in het hart van het oude Honfleur, 21 rue de la Ville. Huisgemaakte keuken, lokale producten, terras. Aangepaste openingstijden tijdens de schoolvakanties.">
     <link rel="canonical" href="https://lenclos-honfleur.fr/nl/">
     <link rel="alternate" hreflang="fr" href="https://lenclos-honfleur.fr/">
     <link rel="alternate" hreflang="en" href="https://lenclos-honfleur.fr/en/">
@@ -512,7 +512,8 @@
 
             <div class="info-block">
                 <h3>Openingstijden</h3>
-                <p>Dinsdag t/m zondag<br>10.00&nbsp;&ndash;&nbsp;21.00 uur, doorlopende service<br><em>Maandag gesloten</em></p>
+                <p id="horaires-fixes">Dinsdag t/m zondag<br>10.00&nbsp;&ndash;&nbsp;21.00 uur, doorlopende service<br><em>Maandag gesloten</em></p>
+                <div id="horaires-detail" class="horaires-detail" hidden></div>
             </div>
 
             <div class="info-block">
@@ -536,31 +537,135 @@
     <script>
         const LANG = document.documentElement.getAttribute("lang") || "fr";
 
-        /* ---------- Horaires (ouvert du mardi au dimanche, 10h - 21h, heure de Paris) ---------- */
-        const horaireTextes = {
-            fr: { ouvert: "Ouvert · jusqu'à 21h", ferme: "Fermé · ouvert de 10h à 21h", lundi: "Fermé aujourd'hui" },
-            en: { ouvert: "Open · until 9pm", ferme: "Closed · open 10am to 9pm", lundi: "Closed today" },
-            nl: { ouvert: "Open · tot 21.00 uur", ferme: "Gesloten · open 10.00 tot 21.00 uur", lundi: "Vandaag gesloten" }
+        /* ---------- Horaires : ils changent pendant les vacances scolaires ---------- */
+        /* Vacances de la zone B (académie de Normandie), premier et dernier jour INCLUS.
+           Source : data.education.gouv.fr (calendrier scolaire). À compléter chaque année. */
+        const VACANCES = [
+            ["2026-10-17", "2026-11-01"], ["2026-12-19", "2027-01-03"], ["2027-02-20", "2027-03-07"],
+            ["2027-04-17", "2027-05-02"], ["2027-07-03", "2027-08-31"],
+            ["2027-10-23", "2027-11-07"], ["2027-12-18", "2028-01-02"], ["2028-02-05", "2028-02-20"],
+            ["2028-04-08", "2028-04-23"], ["2028-07-04", "2028-08-31"]
+        ];
+
+        /* [ouverture, fermeture] en heures, null = fermé. Index 0 = dimanche, 1 = lundi ... 6 = samedi. */
+        const HORAIRES = {
+            vacances: [[10, 16], [10, 16], [10, 16], [10, 16], [10, 16], [10, 16], [10, 21]],
+            habituel: [[10, 21], null, [10, 21], [10, 21], [10, 21], [10, 21], [10, 21]]
         };
+        const ORDRE_SEMAINE = [1, 2, 3, 4, 5, 6, 0];
+
+        const TEXTES = {
+            fr: {
+                jours: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+                ferme: "Fermé", periodeVac: "Horaires des vacances scolaires", periodeHab: "Horaires habituels",
+                noteVac: "Hors vacances scolaires : ouvert de 10h à 21h, fermé le lundi.",
+                noteHab: "Pendant les vacances scolaires : ouvert tous les jours de 10h à 16h, le samedi de 10h à 21h.",
+                heure: function (h) { return h + "h"; },
+                plage: function (o, c) { return o + "h – " + c + "h"; },
+                ouvert: function (c) { return "Ouvert · jusqu'à " + this.heure(c); },
+                ouvre: function (d, jour, o) {
+                    return "Fermé · ouvre " + (d === 0 ? "" : d === 1 ? "demain " : jour + " ") + "à " + this.heure(o);
+                }
+            },
+            en: {
+                jours: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                ferme: "Closed", periodeVac: "School holiday hours", periodeHab: "Regular hours",
+                noteVac: "Outside school holidays: open 10am to 9pm, closed on Mondays.",
+                noteHab: "During school holidays: open every day 10am to 4pm, Saturdays 10am to 9pm.",
+                heure: function (h) { return h <= 12 ? h + "am" : (h - 12) + "pm"; },
+                plage: function (o, c) { return this.heure(o) + " – " + this.heure(c); },
+                ouvert: function (c) { return "Open · until " + this.heure(c); },
+                ouvre: function (d, jour, o) {
+                    return "Closed · opens " + (d === 0 ? "" : d === 1 ? "tomorrow " : "on " + jour + " ") + "at " + this.heure(o);
+                }
+            },
+            nl: {
+                jours: ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"],
+                ferme: "Gesloten", periodeVac: "Openingstijden schoolvakantie", periodeHab: "Gebruikelijke openingstijden",
+                noteVac: "Buiten de schoolvakanties: open van 10.00 tot 21.00 uur, maandag gesloten.",
+                noteHab: "Tijdens de schoolvakanties: elke dag open van 10.00 tot 16.00 uur, zaterdag van 10.00 tot 21.00 uur.",
+                heure: function (h) { return h + ".00 uur"; },
+                plage: function (o, c) { return o + ".00 – " + c + ".00 uur"; },
+                ouvert: function (c) { return "Open · tot " + this.heure(c); },
+                ouvre: function (d, jour, o) {
+                    return "Gesloten · opent " + (d === 0 ? "om " : d === 1 ? "morgen om " : jour + " om ") + this.heure(o);
+                }
+            }
+        };
+
+        /* Date, jour de la semaine et heure à Paris (indépendant du fuseau du visiteur). */
+        function maintenantParis() {
+            const parts = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Europe/Paris", year: "numeric", month: "2-digit", day: "2-digit",
+                weekday: "short", hour: "numeric", minute: "numeric", hour12: false
+            }).formatToParts(new Date());
+            const val = function (type) { return parts.find(function (p) { return p.type === type; }).value; };
+            const jours = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+            return {
+                date: val("year") + "-" + val("month") + "-" + val("day"),
+                jour: jours[val("weekday")],
+                heure: (parseInt(val("hour"), 10) % 24) + parseInt(val("minute"), 10) / 60
+            };
+        }
+
+        function ajouterJours(dateStr, n) {
+            const p = dateStr.split("-");
+            const d = new Date(Date.UTC(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10) + n));
+            return d.toISOString().slice(0, 10);
+        }
+
+        function enVacances(dateStr) {
+            return VACANCES.some(function (v) { return dateStr >= v[0] && dateStr <= v[1]; });
+        }
+
+        function grilleDuJour(dateStr) {
+            return enVacances(dateStr) ? HORAIRES.vacances : HORAIRES.habituel;
+        }
+
+        /* Ouvert maintenant ? Sinon, prochaine ouverture. */
+        function statut(dateStr, jour, heure) {
+            for (let d = 0; d <= 7; d++) {
+                const h = grilleDuJour(ajouterJours(dateStr, d))[(jour + d) % 7];
+                if (!h) continue;
+                if (d === 0) {
+                    if (heure >= h[0] && heure < h[1]) return { ouvert: true, fermeture: h[1] };
+                    if (heure < h[0]) return { ouvert: false, d: 0, jour: jour, ouverture: h[0] };
+                    continue;
+                }
+                return { ouvert: false, d: d, jour: (jour + d) % 7, ouverture: h[0] };
+            }
+            return { ouvert: false, d: 0, jour: jour, ouverture: 10 };
+        }
 
         function majHoraire() {
             const el = document.getElementById("horaire-du-jour");
             const dot = document.getElementById("horaire-dot");
-            if (!el) return;
-            const parts = new Intl.DateTimeFormat("en-GB", {
-                timeZone: "Europe/Paris", weekday: "short", hour: "numeric", hour12: false
-            }).formatToParts(new Date());
-            const jour = parts.find(function (p) { return p.type === "weekday"; }).value;
-            const heure = parseInt(parts.find(function (p) { return p.type === "hour"; }).value, 10) % 24;
-            const t = horaireTextes[LANG] || horaireTextes.fr;
-            let etat = "ferme";
-            if (jour === "Mon") {
-                etat = "lundi";
-            } else if (heure >= 10 && heure < 21) {
-                etat = "ouvert";
+            const t = TEXTES[LANG] || TEXTES.fr;
+            const now = maintenantParis();
+            const s = statut(now.date, now.jour, now.heure);
+            if (el) {
+                el.textContent = s.ouvert ? t.ouvert(s.fermeture) : t.ouvre(s.d, t.jours[s.jour], s.ouverture);
             }
-            el.textContent = t[etat];
-            if (dot) { dot.classList.toggle("closed", etat !== "ouvert"); }
+            if (dot) { dot.classList.toggle("closed", !s.ouvert); }
+
+            /* Tableau de la semaine dans le bloc « Horaires d'ouverture » */
+            const boite = document.getElementById("horaires-detail");
+            const fixes = document.getElementById("horaires-fixes");
+            if (!boite) return;
+            const vac = enVacances(now.date);
+            const grille = vac ? HORAIRES.vacances : HORAIRES.habituel;
+            let html = '<p class="horaires-periode">' + (vac ? t.periodeVac : t.periodeHab) + "</p>";
+            html += '<ul class="horaires-liste">';
+            ORDRE_SEMAINE.forEach(function (j) {
+                const h = grille[j];
+                const nom = t.jours[j].charAt(0).toUpperCase() + t.jours[j].slice(1);
+                html += "<li" + (j === now.jour ? ' class="aujourdhui"' : "") + "><span>" + nom + "</span><span>" +
+                    (h ? t.plage(h[0], h[1]) : t.ferme) + "</span></li>";
+            });
+            html += '</ul><p class="horaires-note">' + (vac ? t.noteVac : t.noteHab) + "</p>";
+            boite.innerHTML = html;
+            boite.hidden = false;
+            if (fixes) { fixes.hidden = true; }
         }
         majHoraire();
 
