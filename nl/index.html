@@ -75,7 +75,12 @@
         "hasMenu": "https://lenclos-honfleur.fr/nl/#carte",
         "openingHoursSpecification": [{
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"],
+            "opens": "10:00",
+            "closes": "16:00"
+        }, {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
             "opens": "10:00",
             "closes": "21:00"
         }],
@@ -512,7 +517,7 @@
 
             <div class="info-block">
                 <h3>Openingstijden</h3>
-                <p id="horaires-fixes">Dinsdag t/m zondag<br>10.00&nbsp;&ndash;&nbsp;21.00 uur, doorlopende service<br><em>Maandag gesloten</em></p>
+                <p id="horaires-fixes">Dinsdag t/m vrijdag en zondag: 10.00&nbsp;&ndash;&nbsp;16.00 uur<br>Zaterdag: 10.00&nbsp;&ndash;&nbsp;21.00 uur<br><em>Maandag gesloten, behalve tijdens de schoolvakanties</em></p>
                 <div id="horaires-detail" class="horaires-detail" hidden></div>
             </div>
 
@@ -550,7 +555,7 @@
         /* [ouverture, fermeture] en heures, null = fermé. Index 0 = dimanche, 1 = lundi ... 6 = samedi. */
         const HORAIRES = {
             vacances: [[10, 16], [10, 16], [10, 16], [10, 16], [10, 16], [10, 16], [10, 21]],
-            habituel: [[10, 21], null, [10, 21], [10, 21], [10, 21], [10, 21], [10, 21]]
+            habituel: [[10, 16], null, [10, 16], [10, 16], [10, 16], [10, 16], [10, 21]]
         };
         const ORDRE_SEMAINE = [1, 2, 3, 4, 5, 6, 0];
 
@@ -558,8 +563,8 @@
             fr: {
                 jours: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
                 ferme: "Fermé", periodeVac: "Horaires des vacances scolaires", periodeHab: "Horaires habituels",
-                noteVac: "Hors vacances scolaires : ouvert de 10h à 21h, fermé le lundi.",
-                noteHab: "Pendant les vacances scolaires : ouvert tous les jours de 10h à 16h, le samedi de 10h à 21h.",
+                noteVac: "Hors vacances scolaires : fermé le lundi.",
+                noteHab: "Pendant les vacances scolaires : ouvert aussi le lundi.",
                 heure: function (h) { return h + "h"; },
                 plage: function (o, c) { return o + "h – " + c + "h"; },
                 ouvert: function (c) { return "Ouvert · jusqu'à " + this.heure(c); },
@@ -570,8 +575,8 @@
             en: {
                 jours: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 ferme: "Closed", periodeVac: "School holiday hours", periodeHab: "Regular hours",
-                noteVac: "Outside school holidays: open 10am to 9pm, closed on Mondays.",
-                noteHab: "During school holidays: open every day 10am to 4pm, Saturdays 10am to 9pm.",
+                noteVac: "Outside school holidays: closed on Mondays.",
+                noteHab: "During school holidays: open on Mondays too.",
                 heure: function (h) { return h <= 12 ? h + "am" : (h - 12) + "pm"; },
                 plage: function (o, c) { return this.heure(o) + " – " + this.heure(c); },
                 ouvert: function (c) { return "Open · until " + this.heure(c); },
@@ -582,8 +587,8 @@
             nl: {
                 jours: ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"],
                 ferme: "Gesloten", periodeVac: "Openingstijden schoolvakantie", periodeHab: "Gebruikelijke openingstijden",
-                noteVac: "Buiten de schoolvakanties: open van 10.00 tot 21.00 uur, maandag gesloten.",
-                noteHab: "Tijdens de schoolvakanties: elke dag open van 10.00 tot 16.00 uur, zaterdag van 10.00 tot 21.00 uur.",
+                noteVac: "Buiten de schoolvakanties: maandag gesloten.",
+                noteHab: "Tijdens de schoolvakanties: ook op maandag open.",
                 heure: function (h) { return h + ".00 uur"; },
                 plage: function (o, c) { return o + ".00 – " + c + ".00 uur"; },
                 ouvert: function (c) { return "Open · tot " + this.heure(c); },
