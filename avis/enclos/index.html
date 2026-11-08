@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre avis – L'Enclos</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#7a6f69">
+    <link rel="icon" href="../../favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <style>
+        @font-face { font-family: 'Cormorant Garamond'; src: url('../../fonts/cormorantgaramond-500-italic.woff2') format('woff2'); font-weight: 500; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Poppins'; src: url('../../fonts/poppins-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+        @font-face { font-family: 'Poppins'; src: url('../../fonts/poppins-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+        :root { --taupe: #7a6f69; --taupe-dark: #5d534e; --sage: #587770; --ink: #2e2926; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: var(--ink); background: #f7f3ec; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 16px; text-align: center; -webkit-tap-highlight-color: transparent; }
+        .carte { width: 100%; max-width: 420px; background: #fff; border: 1px solid #e3ddd2; border-top: 6px solid var(--taupe); border-radius: 6px; padding: 34px 24px 26px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 3.2rem; line-height: 1.05; color: var(--taupe-dark); }
+        .sous { margin: 6px 0 24px; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: #8a817a; }
+        .question { font-size: 1.05rem; margin-bottom: 18px; }
+        .btn { display: block; text-decoration: none; padding: 15px 18px; border-radius: 30px; font-weight: 600; font-size: 1rem; margin-top: 12px; }
+        .btn small { display: block; font-weight: 400; font-size: 0.8rem; margin-top: 2px; }
+        .btn-avis { background: var(--sage); color: #fff; }
+        .btn-avis .etoiles { display: block; letter-spacing: 3px; font-size: 1.05rem; color: #f0d27a; }
+        .btn-site { background: #fff; color: var(--taupe-dark); border: 2px solid var(--taupe); }
+        .btn:active { transform: scale(0.985); }
+        .retour { display: inline-block; margin-top: 20px; font-size: 0.85rem; color: var(--taupe-dark); }
+        .merci { margin-top: 14px; font-size: 0.82rem; color: #8a817a; }
+        :focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; }
+    </style>
+</head>
+<body>
+    <main class="carte">
+        <h1>L'Enclos</h1>
+        <p class="sous">Bistrot &times; Bar à vin</p>
+
+        <p class="question" id="question">Un bon moment chez nous&nbsp;?</p>
+
+        <a class="btn btn-avis" href="https://search.google.com/local/writereview?placeid=ChIJn1ArAwAz4EcRyXw8Ibztgso" rel="noopener">
+            <span class="etoiles" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span id="t-avis">Laisser un avis Google</span>
+            <small id="s-avis">Cela ne prend que deux minutes</small>
+        </a>
+
+        <a class="btn btn-site" href="../../">
+            <span id="t-site">Voir le site</span>
+            <small id="s-site">Carte, horaires et accès</small>
+        </a>
+
+        <a class="retour" href="../" id="retour">&larr; Changer d'adresse</a>
+        <p class="merci" id="merci">Merci, votre avis compte beaucoup pour nous.</p>
+    </main>
+
+    <script>
+        var T = {
+            fr: { question: "Un bon moment chez nous ?", avis: "Laisser un avis Google", savis: "Cela ne prend que deux minutes", site: "Voir le site", ssite: "Carte, horaires et accès", retour: "← Changer d'adresse", merci: "Merci, votre avis compte beaucoup pour nous." },
+            en: { question: "Enjoyed your time with us?", avis: "Leave a Google review", savis: "It only takes two minutes", site: "Visit our website", ssite: "Menu, opening hours and directions", retour: "← Choose another place", merci: "Thank you, your feedback means a lot to us." },
+            nl: { question: "Een fijne tijd bij ons gehad?", avis: "Laat een Google-review achter", savis: "Het duurt maar twee minuten", site: "Naar de website", ssite: "Menukaart, openingstijden en route", retour: "← Ander adres kiezen", merci: "Dank u, uw mening is erg belangrijk voor ons." }
+        };
+        var lang = (navigator.language || "fr").slice(0, 2);
+        var t = T[lang] || T.fr;
+        document.documentElement.lang = T[lang] ? lang : "fr";
+        ["question", "t-avis", "s-avis", "t-site", "s-site", "retour", "merci"].forEach(function (id) {
+            var k = { "t-avis": "avis", "s-avis": "savis", "t-site": "site", "s-site": "ssite" }[id] || id;
+            document.getElementById(id).textContent = t[k];
+        });
+    </script>
+</body>
+</html>

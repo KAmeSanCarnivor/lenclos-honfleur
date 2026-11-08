@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre avis – L'Enclos et La Gourmandine</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#7a6f69">
+    <link rel="icon" href="../favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <style>
+        @font-face { font-family: 'Cormorant Garamond'; src: url('../fonts/cormorantgaramond-500-italic.woff2') format('woff2'); font-weight: 500; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+        @font-face { font-family: 'Poppins'; src: url('../fonts/poppins-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+        @font-face { font-family: 'Zilla Slab'; src: url('../fonts/zilla-slab-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: #2e2926; background: #f4f1ea; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 28px 18px; -webkit-tap-highlight-color: transparent; }
+        main { width: 100%; max-width: 460px; margin: 0 auto; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(2.2rem, 9vw, 3rem); line-height: 1.1; color: #5d534e; text-align: center; text-wrap: balance; }
+        .invite { margin: 10px 0 26px; text-align: center; color: #6b625c; }
+        .bloc { display: block; text-decoration: none; padding: 26px 24px 24px; margin-top: 14px; border-radius: 4px; transition: transform 0.25s ease; }
+        .bloc:active { transform: scale(0.985); }
+        .bloc .nom { display: block; line-height: 1.1; }
+        .bloc .desc { display: block; margin-top: 8px; font-size: 0.9rem; }
+        .bloc .adr { display: block; margin-top: 2px; font-size: 0.8rem; opacity: 0.8; }
+        .bloc .fleche { display: block; margin-top: 16px; font-weight: 600; font-size: 0.9rem; }
+        .enclos { background: #7a6f69; color: #f7f3ec; }
+        .enclos .nom { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2.6rem; }
+        .gourm { background: #F0B92A; color: #2F2A1A; }
+        .gourm .nom { font-family: 'Zilla Slab', Georgia, serif; font-weight: 700; font-size: 2.2rem; }
+        :focus-visible { outline: 3px solid #2e2926; outline-offset: 3px; }
+        .merci { margin-top: 22px; text-align: center; font-size: 0.85rem; color: #6b625c; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="titre">Un bon moment chez nous&nbsp;?</h1>
+        <p class="invite" id="invite">Choisissez votre adresse.</p>
+
+        <a class="bloc enclos" href="enclos/">
+            <span class="nom">L'Enclos</span>
+            <span class="desc" id="d-enclos">Bistrot familial et bar à vin</span>
+            <span class="adr">21 rue de la Ville, Honfleur</span>
+            <span class="fleche" id="f-enclos">Continuer &rarr;</span>
+        </a>
+
+        <a class="bloc gourm" href="https://lagourmandine-honfleur.fr/avis/">
+            <span class="nom">La Gourmandine</span>
+            <span class="desc" id="d-gourm">Boutique de produits normands</span>
+            <span class="adr">7 rue des Logettes, Honfleur</span>
+            <span class="fleche" id="f-gourm">Continuer &rarr;</span>
+        </a>
+
+        <p class="merci" id="merci">Merci, votre avis compte beaucoup pour nous.</p>
+    </main>
+
+    <script>
+        var T = {
+            fr: { titre: "Un bon moment chez nous ?", invite: "Choisissez votre adresse.", de: "Bistrot familial et bar à vin", dg: "Boutique de produits normands", f: "Continuer →", merci: "Merci, votre avis compte beaucoup pour nous." },
+            en: { titre: "Enjoyed your visit?", invite: "Choose your place.", de: "Family bistro and wine bar", dg: "Shop of Norman products", f: "Continue →", merci: "Thank you, your feedback means a lot to us." },
+            nl: { titre: "Een fijne tijd gehad?", invite: "Kies uw adres.", de: "Familiaal bistro en wijnbar", dg: "Winkel met Normandische producten", f: "Verder →", merci: "Dank u, uw mening is erg belangrijk voor ons." }
+        };
+        var lang = (navigator.language || "fr").slice(0, 2);
+        var t = T[lang] || T.fr;
+        document.documentElement.lang = T[lang] ? lang : "fr";
+        document.getElementById("titre").textContent = t.titre;
+        document.getElementById("invite").textContent = t.invite;
+        document.getElementById("d-enclos").textContent = t.de;
+        document.getElementById("d-gourm").textContent = t.dg;
+        document.getElementById("f-enclos").textContent = t.f;
+        document.getElementById("f-gourm").textContent = t.f;
+        document.getElementById("merci").textContent = t.merci;
+    </script>
+</body>
+</html>
