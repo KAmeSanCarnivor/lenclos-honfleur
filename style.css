@@ -290,9 +290,9 @@ body {
 
 /* le cadrage écarte les bords de la capture et les clients à droite */
 .hero-img-terrasse {
-    left: -4%;
-    width: 128%;
-    object-position: 50% 62%;
+    left: 0;
+    width: 100%;
+    object-position: 50% 50%;
     opacity: 1;
 }
 
@@ -417,6 +417,7 @@ body {
 .about-image img {
     display: block;
     width: 100%;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(46, 41, 38, 0.15);
 }
@@ -1445,4 +1446,83 @@ a.lang-flag {
     margin-top: 10px;
     font-size: 0.8rem !important;
     font-style: italic;
+}
+
+/* ---------- La boutique voisine : petite ardoise, craie jaune beurre ---------- */
+.voisine {
+    position: relative;
+    max-width: 460px;
+    margin: 36px auto 0;
+    padding: 20px 24px 22px;
+    text-align: center;
+    color: #ece6da;
+    background: #2d2a27 url('images/ardoise.svg') center / cover no-repeat;
+    border: 16px solid #6d4f35;
+    border-image: url('images/cadre-bois.svg') 30 / 16px stretch;
+    box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.65);
+    filter: drop-shadow(0 8px 12px rgba(46, 41, 38, 0.3));
+    transform: rotate(0.4deg);
+}
+
+.voisine-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #d9d2c4;
+    opacity: 0.85;
+}
+
+.voisine-nom {
+    font-family: var(--font-title);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.9rem;
+    line-height: 1.15;
+    margin: 6px 0 8px;
+    color: #f0d27a;
+    text-shadow: 0 0 1.5px rgba(255, 255, 255, 0.4);
+}
+
+.voisine-texte {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #e4ddd0;
+}
+
+.voisine-lien {
+    display: inline-block;
+    margin-top: 12px;
+    color: #f0d27a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.voisine-lien:hover {
+    color: #fff;
+}
+
+/* ---------- Finitions : sélection, focus clavier, titres équilibrés ---------- */
+::selection {
+    background: var(--taupe);
+    color: #fff;
+}
+
+:focus-visible {
+    outline: 3px solid var(--sage);
+    outline-offset: 3px;
+}
+
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scrollbar-color: var(--taupe) #f7f3ec;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
 }
